@@ -140,7 +140,7 @@
     </footer>
 
     <!-- DATA -->
-    <script src="rifles.js?v=4.3" defer></script>
+    <script src="rifles.js?v=4.4" defer></script>
     <script src="snipers.js?v=4.3" defer></script>
     <script src="bazookas.js?v=4.3" defer></script>
     <script src="pistols.js?v=4.3" defer></script>

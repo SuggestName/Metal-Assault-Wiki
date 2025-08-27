@@ -1,5 +1,18 @@
 const rifles = [
     {
+        name: "M294 (Abyss)",
+        ammo: 100, magazines: 4,
+        duration: "Permanent",
+        price: "Lottery - Limited",
+        image: "src/imagens/rifles/m249_abyss.png",
+        damage: 83,
+        rateOfFire: 60,
+        range: 72,
+        accuracy: 48,
+        bulletSpeed: 72,
+        mobility: 94
+    },
+    {
         name: "G36K (Aurora)",
         ammo: 30, magazines: 5,
         duration: "Permanent",
