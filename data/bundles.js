@@ -36,6 +36,24 @@ const bundles = [
         image: "imagens/bundles/sweatshirt.png"
     },
     {
+        name: "Elvis",
+        price: "Lottery - Limited",
+        permanent: true,
+        parts: 6,
+        expBonus: null,
+        stats: {
+            "1 Set": "Range +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "Rate Of Fire +4%",
+            "4 Set": "Hp +3%",
+            "5 Set": "Attack Power +3%",
+            "6 Set": "Movement Speed +5%",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Ammo"],
+        image: "imagens/bundles/elvis.png"
+    },
+    {
         name: "Spartan Set",
         price: 188.00,
         permanent: true,

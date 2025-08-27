@@ -96,16 +96,16 @@
   </footer>
 
   <!-- DATASETS (globais) -->
-  <script src="data/rifles.js"></script>
-  <script src="data/snipers.js"></script>
-  <script src="data/bazookas.js"></script>
-  <script src="data/pistols.js"></script>
-  <script src="data/shotguns.js"></script>
-  <script src="data/shields.js"></script>
-  <script src="data/bundles.js"></script>
-  <script src="data/pets.js"></script>
+  <script src="data/rifles.js?v=4.3"></script>
+  <script src="data/snipers.js?v=4.3"></script>
+  <script src="data/bazookas.js?v=4.3"></script>
+  <script src="data/pistols.js?v=4.3"></script>
+  <script src="data/shotguns.js?v=4.3"></script>
+  <script src="data/shields.js?v=4.3"></script>
+  <script src="data/bundles.js?v=4.3"></script>
+  <script src="data/pets.js?v=4.3"></script>
 
   <!-- APP -->
-  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js?v=4.3"></script>
 </body>
 </html>
