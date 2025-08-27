@@ -120,7 +120,7 @@ function createComparisonCard(kind, item, n) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${item.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${item.image}?v=4.2" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=4.2">
+        <img src="${item.image}?v=4.3" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=4.3">
       </div>
       <div class="border-t border-gray-600 my-2"></div>
       <div class="space-y-1">
@@ -416,7 +416,7 @@ function createBundleCard(b) {
       </p>
 
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${b.image}?v=4.2" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.2">
+        <img src="${b.image}?v=4.3" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.3">
       </div>
 
       <div class="text-sm text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
@@ -453,7 +453,7 @@ function createBundleCompareCard(b) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${b.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${b.image}?v=4.2" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.2">
+        <img src="${b.image}?v=4.3" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.3">
       </div>
 
       <div class="text-xs text-gray-300">Price: <span class="text-white font-semibold">${b.price ?? '-'}</span></div>
@@ -524,7 +524,7 @@ function createPetCard(p) {
       </div>
       <p class="text-yellow-400 font-bold text-sm mb-2">${htmlEscape(p.source ?? '')}</p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${htmlEscape(p.image)}?v=4.2" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.2">
+        <img src="${htmlEscape(p.image)}?v=4.3" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.3">
       </div>
       ${petStatsTable(p)}
     </div>
@@ -537,7 +537,7 @@ function createPetCompareCard(p) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${htmlEscape(p.name)}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${htmlEscape(p.image)}?v=4.2" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.2">
+        <img src="${htmlEscape(p.image)}?v=4.3" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.3">
       </div>
       <div class="text-xs text-yellow-300 font-semibold mb-2">${htmlEscape(p.source ?? '')}</div>
       ${petStatsTable(p)}

@@ -8,7 +8,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="style.css?v=4.2">
+    <link rel="stylesheet" href="style.css?v=4.3">
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -32,7 +32,7 @@
                 <div class="text-center md:text-left">
                     <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
                         class="inline-block hover:opacity-80 transition-opacity">
-                        <img src="src/imagens/logo.png?v=4.2" alt="Metal Assault - Giga Slave"
+                        <img src="src/imagens/logo.png?v=4.3" alt="Metal Assault - Giga Slave"
                             class="h-12 w-auto mx-auto md:mx-0"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <div class="hidden">
@@ -132,7 +132,7 @@
                 <div class="text-center md:text-left">
                     <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
                         class="inline-block hover:opacity-80 transition-opacity">
-                        <img src="src/imagens/logo.png?v=4.2" alt="Metal Assault - Giga Slave"
+                        <img src="src/imagens/logo.png?v=4.3" alt="Metal Assault - Giga Slave"
                             class="h-16 w-auto mx-auto md:mx-0"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <div class="hidden">
@@ -172,14 +172,14 @@
     </footer>
 
     <!-- DATA (apenas Bundles/Pets) -->
-    <script src="bundles.js?v=4.2" defer></script>
-    <script src="pets.js?v=4.2" defer></script>
+    <script src="bundles.js?v=4.3" defer></script>
+    <script src="pets.js?v=4.3" defer></script>
 
     <!-- LÓGICA COMPARTILHADA -->
-    <script src="utils.js?v=4.2" defer></script>
-    <script src="compair.js?v=4.2" defer></script>
+    <script src="utils.js?v=4.3" defer></script>
+    <script src="compair.js?v=4.3" defer></script>
 
-    <script src="bundles-page.js?v=4.2" defer></script>
+    <script src="bundles-page.js?v=4.3" defer></script>
 </body>
 
 </html>
