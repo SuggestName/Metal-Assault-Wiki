@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+body {
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.military-card {
+  background: #1b2436;
+  border: 1px solid #3b4a6b;
+}
+
+.chev {
+  transition: transform .2s ease;
+}
+
+.collapsed .chev {
+  transform: rotate(-90deg);
+}
