@@ -390,20 +390,39 @@ function bundleEffectsList(b) {
 }
 
 function createBundleCard(b) {
-    const parts = (b.parts != null ? b.parts : (Array.isArray(b.images) ? b.images.length : 0));
+    const partsShown =
+        (Number.isFinite(b.parts) && b.parts > 0)
+            ? b.parts
+            : (Array.isArray(b.equipment) && b.equipment.length
+                ? b.equipment.length
+                : (Array.isArray(b.images) ? b.images.length : 0));
+
+    const equipmentLine = (Array.isArray(b.equipment))
+        ? `
+        <div class="mt-1 text-xs text-gray-300 leading-snug bundle-equipment">
+            <span class="text-gray-400">Equipment:</span>
+            <span class="text-white">${b.equipment.join(' • ')}</span>
+       </div>`
+        : ``;
+
     return `
     <div class="bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition">
       <div class="flex justify-between items-center mb-2">
         <h2 class="text-lg font-bold text-blue-400">${b.name}</h2>
       </div>
+
       <p class="text-yellow-400 font-bold text-sm mb-2">
         ${b.price !== undefined ? `Price: ${String(b.price)}` : ''} ${b.permanent ? ' <span class="text-green-400">Permanent</span>' : ''}
       </p>
+
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
         <img src="${b.image}?v=4.2" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.2">
       </div>
-      <div class="text-sm text-gray-300 mb-2">Parts: <span class="text-white font-semibold">${parts}</span></div>
-      <div class="space-y-2">
+
+      <div class="text-sm text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
+      ${equipmentLine}
+
+      <div class="space-y-2 mt-2">
         <div class="text-gray-300 font-semibold text-sm">Effects:</div>
         ${bundleEffectsList(b)}
       </div>
@@ -415,15 +434,32 @@ function createBundleCompareCard(b) {
     if (!b) {
         return `<div class="comparison-card rounded-lg p-3 text-center text-sm"><p class="text-gray-400">Select a bundle</p></div>`;
     }
-    const parts = (b.parts != null ? b.parts : (Array.isArray(b.images) ? b.images.length : 0));
+
+    const partsShown =
+        (Number.isFinite(b.parts) && b.parts > 0)
+            ? b.parts
+            : (Array.isArray(b.equipment) && b.equipment.length
+                ? b.equipment.length
+                : (Array.isArray(b.images) ? b.images.length : 0));
+
+    const equipmentLine = (Array.isArray(b.equipment) && b.equipment.length)
+        ? `<div class="text-xs text-gray-300 mt-1 bundle-equipment">
+         <span class="text-gray-400">Equipment:</span>
+         <span class="text-white">${b.equipment.join(' • ')}</span>
+       </div>`
+        : ``;
+
     return `
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${b.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
         <img src="${b.image}?v=4.2" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.2">
       </div>
-      <div class="text-xs text-gray-300 mb-1">Price: <span class="text-white font-semibold">${b.price ?? '-'}</span></div>
-      <div class="text-xs text-gray-300 mb-2">Parts: <span class="text-white font-semibold">${parts}</span></div>
+
+      <div class="text-xs text-gray-300">Price: <span class="text-white font-semibold">${b.price ?? '-'}</span></div>
+      <div class="text-xs text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
+      ${equipmentLine}
+
       <div class="border-t border-gray-600 my-2"></div>
       ${bundleEffectsList(b)}
     </div>

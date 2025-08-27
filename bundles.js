@@ -14,6 +14,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
         image: "src/imagens/bundles/forged_detective.png"
     },
     {
@@ -31,40 +32,287 @@ const bundles = [
             "6 Set": "Movement Speed +6%",
             "7 Set": ""
         },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo", "Backpack"],
         image: "src/imagens/bundles/sweatshirt.png"
     },
     {
-        name: "Newbie Pajamas 7D",
-        price: 1.00,
-        permanent: false,
+        name: "Spartan Set",
+        price: 188.00,
+        permanent: true,
+        parts: 6,
+        stats: {
+            "1 Set": "Range +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "Rate of Fire +4",
+            "4 Set": "HP +3%",
+            "5 Set": "Attack Power +3%",
+            "6 Set": "Movement Speed +5%",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack"],
+        image: "src/imagens/bundles/spartan.png"
+    },
+    {
+        name: "Western Friends Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Rate of Fire +5%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Movement Speed +5%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/western_friends.png"
+    },
+    {
+        name: "Tears of the Sun Set",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: '+10%',
+        stats: {
+            "1 Set": "Accurancy +3%",
+            "2 Set": "Range +4%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +5%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +5%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/tears_of_the_sun.png"
+    },
+    {
+        name: "FCS Squad Leader Costume",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: null,
+        stats: {
+            "1 Set": "Accurancy +10%",
+            "2 Set": "Range +4%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +5%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +5%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/fcs_squad_leader.png"
+    },
+    {
+        name: "FCS Bundle",
+        price: 188.00,
+        permanent: true,
+        parts: 6,
+        stats: {
+            "1 Set": "Range +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "HP +3%",
+            "5 Set": "Attack Power +3%",
+            "6 Set": "Movement Speed +5%",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/fcs_bundle.png"
+    },
+    {
+        name: "SWAT Squad Leader Set",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: null,
+        stats: {
+            "1 Set": "Accurancy +4%",
+            "2 Set": "Range +4%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +3%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +3%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/swat_leader.png"
+    },
+    {
+        name: "ACU Set",
+        price: 188.00,
+        permanent: true,
+        parts: 5,
+        stats: {
+            "1 Set": "Rate of Fire +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +5%",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
+        image: "src/imagens/bundles/acu.png"
+    },
+    {
+        name: "Red Cross Combat Suit",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        stats: {
+            "1 Set": "Accurancy +3%",
+            "2 Set": "Range +2%",
+            "3 Set": "Rate of Fire +2%",
+            "4 Set": "Bullet Speed +3%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +3%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/red_crusader.png"
+    },
+    {
+        name: "Firefighter Set",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: null,
+        stats: {
+            "1 Set": "Accurancy +10%",
+            "2 Set": "Range +4%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +5%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +5%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/firefighter.png"
+    },
+    {
+        name: "Rambo Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Bullet Speed +5%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Speed +5%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/rambo.png"
+    },
+    {
+        name: "Terrorist Set",
+        price: 188.00,
+        permanent: true,
+        parts: 5,
+        expBonus: null,
+        stats: {
+            "1 Set": "Rate of Fire +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +5%",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/terrorist.png"
+    },
+    {
+        name: "(Black) Alliance Contact Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Bullet Speed +3%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Speed +3%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/black_alliance.png"
+    },
+    {
+        name: "(Green) Wind Alliance Contact Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Bullet Speed +3%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Speed +3%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/green_alliance.png"
+    },
+    {
+        name: "(Red) Fire Alliance Contact Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Bullet Speed +3%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Speed +3%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/red_alliance.png"
+    },
+    {
+        name: "Kung Fu Master Set",
+        price: 188.00,
+        permanent: true,
         parts: 4,
         expBonus: null,
         stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
+            "1 Set": "Bullet Speed +3%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Movement Speed +5%",
             "5 Set": "",
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/newbie_pajamas.png"
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/kung_fu_master.png"
     },
     {
-        name: "Beach Set Bundle",
+        name: "Jiangshi Zombie Set",
         price: 188.00,
         permanent: true,
-        parts: 0,
+        parts: 5,
+        expBonus: null,
         stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
+            "1 Set": "Rate of Fire +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +5%",
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/beach_set.png"
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/chinese_zombie.png"
     },
     {
         name: "Panda Set",
@@ -80,16 +328,17 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
         image: "src/imagens/bundles/panda_set.png"
     },
     {
-        name: "FCS Squad Leader Costume",
+        name: "Cat Set",
         price: 188.00,
         permanent: true,
         parts: 7,
         expBonus: null,
         stats: {
-            "1 Set": "Hit Rate +10%",
+            "1 Set": "Accurancy +10%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -97,7 +346,167 @@ const bundles = [
             "6 Set": "Attack Power +3%",
             "7 Set": "Movement Speed +5%"
         },
-        image: "src/imagens/bundles/fcs_squad_leader.png"
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/cat.png"
+    },
+    {
+        name: "Ghost Hunter (White Set)",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: "+10%",
+        stats: {
+            "1 Set": "Accurancy +3%",
+            "2 Set": "Range +3%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +5%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +5%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/ghost_hunter_white.png"
+    },
+    {
+        name: "Ghost Hunter (Red Set)",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        expBonus: "+10%",
+        stats: {
+            "1 Set": "Accurancy +3%",
+            "2 Set": "Range +4%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "Bullet Speed +5%",
+            "5 Set": "HP +3%",
+            "6 Set": "Attack Power +3%",
+            "7 Set": "Movement Speed +5%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/ghost_hunter_red.png"
+    },
+    {
+        name: "Spring Set Red & Black",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        stats: {
+            "1 Set": "Bullet Speed +2%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Movement Speed +2%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
+        image: "src/imagens/bundles/spring_red_black.png"
+    },
+    {
+        name: "Pajamas Set",
+        price: 188.00,
+        permanent: true,
+        parts: 4,
+        expBonus: null,
+        stats: {
+            "1 Set": "Bullet Speed +5%",
+            "2 Set": "HP +3%",
+            "3 Set": "Attack Power +3%",
+            "4 Set": "Movement Speed +5%",
+            "5 Set": "",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Shoes", "Backpack"],
+        image: "src/imagens/bundles/pajamas_set.png"
+    },
+    {
+        name: "Beach Set Bundle",
+        price: 188.00,
+        permanent: true,
+        parts: 7,
+        stats: {
+            "1 Set": "Bullet Speed +4%",
+            "2 Set": "Defense +4%",
+            "3 Set": "Accurancy +4%",
+            "4 Set": "Rate of Fire +4%",
+            "5 Set": "Hp +4%",
+            "6 Set": "Rate of Fire +4%",
+            "7 Set": "Attack Power +4%"
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/beach_set.png"
+    },
+    {
+        name: "Private Detective Set",
+        price: 198.00,
+        permanent: true,
+        parts: 6,
+        expBonus: null,
+        stats: {
+            "1 Set": "Range +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "HP +3%",
+            "5 Set": "Attack Power +3%",
+            "6 Set": "Movement Speed +5%",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack"],
+        image: "src/imagens/bundles/private_detective.png"
+    },
+    {
+        name: "Elite High School Set",
+        price: 256.00,
+        permanent: true,
+        parts: 5,
+        expBonus: null,
+        stats: {
+            "1 Set": "Rate of Fire +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +5%",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Glasses", "Outfit", "Shoes", "Backpack", "Ammo"],
+        image: "src/imagens/bundles/elite_high_school.png"
+    },
+    {
+        name: "New Christmas Bundle",
+        price: 188.00,
+        permanent: true,
+        parts: 5,
+        stats: {
+            "1 Set": "Rate of Fire +4",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +5%",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack"],
+        image: "src/imagens/bundles/new_christmas.png"
+    },
+    {
+        name: "2013 Christmas Bundle",
+        price: 288.00,
+        permanent: true,
+        parts: 5,
+        expBonus: '+10%',
+        stats: {
+            "1 Set": "Rate of Fire +2%",
+            "2 Set": "Bullet Speed +2%",
+            "3 Set": "HP +3%",
+            "4 Set": "Attack Power +3%",
+            "5 Set": "Movement Speed +3%",
+            "6 Set": "",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack"],
+        image: "src/imagens/bundles/old_christmas.png"
     },
     {
         name: "Indonesian School Uniform",
@@ -148,38 +557,6 @@ const bundles = [
         image: "src/imagens/bundles/us_navy.png"
     },
     {
-        name: "New Christmas Bundle",
-        price: 188.00,
-        permanent: true,
-        parts: 5,
-        stats: {
-            "1 Set": "Rate of Fire +4",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "HP +3%",
-            "4 Set": "Attack Power +3%",
-            "5 Set": "Movement Speed +5%",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/new_christmas.png"
-    },
-    {
-        name: "FCS Bundle",
-        price: 188.00,
-        permanent: true,
-        parts: 6,
-        stats: {
-            "1 Set": "Range +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "HP +3%",
-            "5 Set": "Attack Power +3%",
-            "6 Set": "Movement Speed +5%",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/fcs_bundle.png"
-    },
-    {
         name: "Police Officer Bundle",
         price: 188.00,
         permanent: true,
@@ -228,88 +605,6 @@ const bundles = [
         image: "src/imagens/bundles/spring_white_dragon.png"
     },
     {
-        name: "(Black) Alliance Contact Set",
-        price: 188.00,
-        permanent: true,
-        parts: 0,
-        stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/black_alliance.png"
-    },
-    {
-        name: "(Green) Wind Alliance Contact Set",
-        price: 188.00,
-        permanent: true,
-        parts: 0,
-        stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/green_alliance.png"
-    },
-    {
-        name: "(Red) Fire Alliance Contact Set",
-        price: 188.00,
-        permanent: true,
-        parts: 0,
-        stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/red_alliance.png"
-    },
-    {
-        name: "Kung Fu Master Set",
-        price: 188.00,
-        permanent: true,
-        parts: 4,
-        expBonus: null,
-        stats: {
-            "1 Set": "Bullet Speed +3%",
-            "2 Set": "HP +3%",
-            "3 Set": "Attack Power +3%",
-            "4 Set": "Movement Speed +5%",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/kung_fu_master.png"
-    },
-    {
-        name: "SWAT Squad Leader Set",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: null,
-        stats: {
-            "1 Set": "Hit Rate +4%",
-            "2 Set": "Range +4%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +3%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +3%"
-        },
-        image: "src/imagens/bundles/swat_leader.png"
-    },
-    {
         name: "Korean Outfit Bundle",
         price: 188.00,
         permanent: true,
@@ -342,56 +637,6 @@ const bundles = [
         image: "src/imagens/bundles/us_marine.png"
     },
     {
-        name: "Spartan Set",
-        price: 188.00,
-        permanent: true,
-        parts: 6,
-        stats: {
-            "1 Set": "Range +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "Rate of Fire +4",
-            "4 Set": "HP +3%",
-            "5 Set": "Attack Power +3%",
-            "6 Set": "Movement Speed +5%",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/spartan.png"
-    },
-    {
-        name: "Firefighter Set",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: null,
-        stats: {
-            "1 Set": "Hit Rate +10%",
-            "2 Set": "Range +4%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +5%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +5%"
-        },
-        image: "src/imagens/bundles/firefighter.png"
-    },
-    {
-        name: "Chinese Zombie Set",
-        price: 188.00,
-        permanent: true,
-        parts: 5,
-        expBonus: null,
-        stats: {
-            "1 Set": "Rate of Fire +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "HP +3%",
-            "4 Set": "Attack Power +3%",
-            "5 Set": "Movement Speed +5%",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/chinese_zombie.png"
-    },
-    {
         name: "Ghost Set",
         price: 188.00,
         permanent: true,
@@ -406,23 +651,6 @@ const bundles = [
             "7 Set": ""
         },
         image: "src/imagens/bundles/ghost.png"
-    },
-    {
-        name: "Cat Set",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: null,
-        stats: {
-            "1 Set": "Hit Rate +10%",
-            "2 Set": "Range +4%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +5%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +5%"
-        },
-        image: "src/imagens/bundles/cat.png"
     },
     {
         name: "GIGN Set",
@@ -441,55 +669,6 @@ const bundles = [
         image: "src/imagens/bundles/gign.png"
     },
     {
-        name: "Western Friends Set",
-        price: 188.00,
-        permanent: true,
-        parts: 4,
-        stats: {
-            "1 Set": "Rate of Fire +5%",
-            "2 Set": "HP +3%",
-            "3 Set": "Attack Power +3%",
-            "4 Set": "Movement Speed +5%",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/western_friends.png"
-    },
-    {
-        name: "ACU Set",
-        price: 188.00,
-        permanent: true,
-        parts: 0,
-        stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/acu.png"
-    },
-    {
-        name: "Terrorist Set",
-        price: 188.00,
-        permanent: true,
-        parts: 5,
-        expBonus: null,
-        stats: {
-            "1 Set": "Rate of Fire +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "HP +3%",
-            "4 Set": "Attack Power +3%",
-            "5 Set": "Movement Speed +5%",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/terrorist.png"
-    },
-    {
         name: "Green Army Set",
         price: 188.00,
         permanent: true,
@@ -504,40 +683,6 @@ const bundles = [
             "7 Set": ""
         },
         image: "src/imagens/bundles/green_army.png"
-    },
-    {
-        name: "Ghost Hunter (White Set)",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: "+10%",
-        stats: {
-            "1 Set": "Hit Rate +3%",
-            "2 Set": "Range +3%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +5%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +5%"
-        },
-        image: "src/imagens/bundles/ghost_hunter_white.png"
-    },
-    {
-        name: "Ghost Hunter (Red Set)",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: "+10%",
-        stats: {
-            "1 Set": "Hit Rate +3%",
-            "2 Set": "Range +4%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +5%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +5%"
-        },
-        image: "src/imagens/bundles/ghost_hunter_red.png"
     },
     {
         name: "Relaxed Bear Set",
@@ -556,72 +701,6 @@ const bundles = [
         image: "src/imagens/bundles/relaxed_bear.png"
     },
     {
-        name: "Rambo Set",
-        price: 188.00,
-        permanent: true,
-        parts: 0,
-        stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
-            "4 Set": "",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/rambo.png"
-    },
-    {
-        name: "Tears of the Sun Set",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        expBonus: '+10%',
-        stats: {
-            "1 Set": "Hit Rate +3%",
-            "2 Set": "Range +4%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "Bullet Speed +5%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +5%"
-        },
-        image: "src/imagens/bundles/tears_of_the_sun.png"
-    },
-    {
-        name: "Spring Set Red & Black",
-        price: 188.00,
-        permanent: true,
-        parts: 4,
-        stats: {
-            "1 Set": "Bullet Speed +2%",
-            "2 Set": "HP +3%",
-            "3 Set": "Attack Power +3%",
-            "4 Set": "Movement Speed +2%",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/spring_red_black.png"
-    },
-    {
-        name: "Pajamas Set",
-        price: 188.00,
-        permanent: true,
-        parts: 4,
-        expBonus: null,
-        stats: {
-            "1 Set": "Bullet Speed +5%",
-            "2 Set": "HP +3%",
-            "3 Set": "Attack Power +3%",
-            "4 Set": "Movement Speed +5%",
-            "5 Set": "",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/pajamas_set.png"
-    },
-    {
         name: "Bruce Lee Set",
         price: 188.00,
         permanent: true,
@@ -638,22 +717,6 @@ const bundles = [
         image: "src/imagens/bundles/bruce_lee.png"
     },
     {
-        name: "Red Cross Combat Suit",
-        price: 188.00,
-        permanent: true,
-        parts: 7,
-        stats: {
-            "1 Set": "Hit Rate +3%",
-            "2 Set": "Range +2%",
-            "3 Set": "Rate of Fire +2%",
-            "4 Set": "Bullet Speed +3%",
-            "5 Set": "HP +3%",
-            "6 Set": "Attack Power +3%",
-            "7 Set": "Movement Speed +3%"
-        },
-        image: "src/imagens/bundles/red_crusader.png"
-    },
-    {
         name: "Clown Set (new stats)",
         price: 198.00,
         permanent: true,
@@ -668,56 +731,5 @@ const bundles = [
             "7 Set": ""
         },
         image: "src/imagens/bundles/clown.png"
-    },
-    {
-        name: "Private Detective Set",
-        price: 198.00,
-        permanent: true,
-        parts: 6,
-        expBonus: null,
-        stats: {
-            "1 Set": "Range +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "Rate of Fire +4%",
-            "4 Set": "HP +3%",
-            "5 Set": "Attack Power +3%",
-            "6 Set": "Movement Speed +5%",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/private_detective.png"
-    },
-    {
-        name: "Elite High School Set",
-        price: 256.00,
-        permanent: true,
-        parts: 5,
-        expBonus: null,
-        stats: {
-            "1 Set": "Rate of Fire +4%",
-            "2 Set": "Bullet Speed +5%",
-            "3 Set": "HP +3%",
-            "4 Set": "Attack Power +3%",
-            "5 Set": "Movement Speed +5%",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/elite_high_school.png"
-    },
-    {
-        name: "2013 Christmas Bundle",
-        price: 288.00,
-        permanent: true,
-        parts: 5,
-        expBonus: '+10%',
-        stats: {
-            "1 Set": "Rate of Fire +2%",
-            "2 Set": "Bullet Speed +2%",
-            "3 Set": "HP +3%",
-            "4 Set": "Attack Power +3%",
-            "5 Set": "Movement Speed +3%",
-            "6 Set": "",
-            "7 Set": ""
-        },
-        image: "src/imagens/bundles/old_christmas.png"
-    },
+    }
 ];

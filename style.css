@@ -17,3 +17,5 @@ body {
 .collapsed .chev {
   transform: rotate(-90deg);
 }
+
+.bundle-equipment { word-break: break-word; }
