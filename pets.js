@@ -73,20 +73,20 @@ const pets = [
     },
     {
         name: "Dudu",
-        source: "??",
+        source: "Lottery",
         image: "src/imagens/pets/dudu.png",
         stats: {
-            "Attack Power": { battle: 0 },
-            "Bullet Speed": { battle: 4 },
-            "Rate of Fire": { battle: 1 },
-            "Range": { battle: 4 },
-            "Hit Rate": { battle: 3 },
-            "Defence": { battle: 7 },
-            "Explosion Resist": { battle: 4 },
-            "Movement Speed": { battle: 5 },
-            "HP": { battle: 7 },
-            "MP": { battle: 7 },
-            "SP": { battle: 1 }
+            "Attack Power": { battle: 5, mission: null, coop: 2 },
+            "Bullet Speed": { battle: 4, mission: null, coop: 2 },
+            "Rate of Fire": { battle: 4, mission: null, coop: 2 },
+            "Range": { battle: 2, mission: null, coop: 5 },
+            "Hit Rate": { battle: 3, mission: null, coop: 3 },
+            "Defence": { battle: 1, mission: null, coop: 4 },
+            "Explosion Resist": { battle: 1, mission: null, coop: 5 },
+            "Movement Speed": { battle: 6, mission: null, coop: 8 },
+            "HP": { battle: null, mission: null, coop: null },
+            "MP": { battle: 7, mission: null, coop: null },
+            "SP": { battle: null, mission: null, coop: null }
         }
     },
     {
@@ -94,17 +94,17 @@ const pets = [
         source: "Cash Reward (Limited)",
         image: "src/imagens/pets/doro.png",
         stats: {
-            "Attack Power": { battle: 0 },
-            "Bullet Speed": { battle: 10 },
-            "Rate of Fire": { battle: 3 },
-            "Range": { battle: 7 },
-            "Hit Rate": { battle: 3 },
-            "Defence": { battle: 1 },
-            "Explosion Resist": { battle: 1 },
-            "Movement Speed": { battle: 6 },
-            "HP": { battle: 0 },
-            "MP": { battle: 7 },
-            "SP": { battle: 1 }
+            "Attack Power": { battle: 0, mission: null, coop: null },
+            "Bullet Speed": { battle: 10, mission: null, coop: null },
+            "Rate of Fire": { battle: 3, mission: null, coop: null },
+            "Range": { battle: 7, mission: null, coop: null },
+            "Hit Rate": { battle: 3, mission: null, coop: null },
+            "Defence": { battle: 1, mission: null, coop: null },
+            "Explosion Resist": { battle: 1, mission: null, coop: null },
+            "Movement Speed": { battle: 6, mission: null, coop: null },
+            "HP": { battle: 0, mission: null, coop: null },
+            "MP": { battle: 7, mission: null, coop: null },
+            "SP": { battle: 1, mission: null, coop: null }
         }
     }
 ];
