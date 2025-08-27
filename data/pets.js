@@ -2,7 +2,7 @@ const pets = [
     {
         name: "Kuku",
         source: "Cash Reward (Limited)",
-        image: "src/imagens/pets/kuku.png",
+        image: "imagens/pets/kuku.png",
         stats: {
             "Attack Power": { battle: 6, mission: 1, coop: 7 },
             "Bullet Speed": { battle: 4, mission: 6, coop: 7 },
@@ -20,7 +20,7 @@ const pets = [
     {
         name: "Momo",
         source: "Cash Reward (Limited)",
-        image: "src/imagens/pets/momo.png",
+        image: "imagens/pets/momo.png",
         stats: {
             "Attack Power": { battle: 1, mission: 1, coop: 9 },
             "Bullet Speed": { battle: 1, mission: 6, coop: 9 },
@@ -38,7 +38,7 @@ const pets = [
     {
         name: "Mumu",
         source: "Cash Reward (Limited)",
-        image: "src/imagens/pets/mumu.png",
+        image: "imagens/pets/mumu.png",
         stats: {
             "Attack Power": { battle: 4, mission: 1, coop: 9 },
             "Bullet Speed": { battle: 4, mission: 6, coop: 9 },
@@ -56,7 +56,7 @@ const pets = [
     {
         name: "Owl",
         source: "Lottery",
-        image: "src/imagens/pets/owl.png",
+        image: "imagens/pets/owl.png",
         stats: {
             "Attack Power": { battle: 5, /* mission: -, */ coop: 2 },
             "Bullet Speed": { battle: 4, /* mission: -, */ coop: 2 },
@@ -74,7 +74,7 @@ const pets = [
     {
         name: "Dudu",
         source: "Lottery",
-        image: "src/imagens/pets/dudu.png",
+        image: "imagens/pets/dudu.png",
         stats: {
             "Attack Power": { battle: 5, mission: null, coop: 2 },
             "Bullet Speed": { battle: 4, mission: null, coop: 2 },
@@ -92,7 +92,7 @@ const pets = [
     {
         name: "Doro",
         source: "Cash Reward (Limited)",
-        image: "src/imagens/pets/doro.png",
+        image: "imagens/pets/doro.png",
         stats: {
             "Attack Power": { battle: 0, mission: null, coop: null },
             "Bullet Speed": { battle: 10, mission: null, coop: null },

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* Preserve original visual identity */
+body {
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.military-card {
+  background: #1b2436;
+  border: 1px solid #3b4a6b;
+}
+
+.chev {
+  transition: transform .2s ease;
+}
+
+.collapsed .chev {
+  transform: rotate(-90deg);
+}
+
+.bundle-equipment {
+  word-break: break-word;
+}
+
+#img-zoom-modal {
+  z-index: 9999;
+}
+
+.weapon-card,
+.comparison-card,
+.military-card {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#category-container .grid > * { min-width: 0; }
+
+.card-title, .bundle-equipment {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.military-card img, .js-zoomable { max-width: 100%; height: auto; }
+
+
+html, body, #category-container { overflow-x: hidden; }

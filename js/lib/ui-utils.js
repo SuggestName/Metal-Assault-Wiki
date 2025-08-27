@@ -1,12 +1,14 @@
-// utils.js
+// ui-utils.js
+// Shared small utilities and UI building helpers.
+// Expose to window for backward compatibility, and export for ES modules.
 
-function applyUpgrade(base, inc) {
+export function applyUpgrade(base, inc) {
   const b = Number(base) || 0;
   const i = Number(inc) || 0;
   return b + i;
 }
 
-function createStatDisplay(label, value) {
+export function createStatDisplay(label, value) {
   return `
     <div class="flex justify-between items-center text-[11px] py-0.5">
       <span class="text-gray-400">${label}</span>
@@ -15,8 +17,7 @@ function createStatDisplay(label, value) {
   `;
 }
 
-// Linhas de atributos exibidas por categoria (grid)
-function displayStatsFor(kind, w) {
+export function displayStatsFor(kind, w) {
   if (kind === 'shields') {
     return [
       createStatDisplay('Rate of Fire', w.rateOfFire),
@@ -33,8 +34,7 @@ function displayStatsFor(kind, w) {
   ].join('');
 }
 
-// Card do arsenal (score opcional)
-function createWeaponCard(w, kind, score) {
+export function createWeaponCard(w, kind, score) {
   if (!w) return '';
   const subtitleParts = [];
   if (w.price !== undefined && w.price !== null) subtitleParts.push(`Price: ${w.price}`);
@@ -42,14 +42,11 @@ function createWeaponCard(w, kind, score) {
   const subtitle = subtitleParts.join(' - ');
 
   return `
-    <div class="bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition relative">
+    <div class="weapon-card w-full min-w-0 bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition relative">
       <div class="flex items-center mb-3">
-          <!-- Título: ocupa o espaço e pode truncar -->
-          <h2 class="flex-1 min-w-0 text-lg font-bold text-blue-400">
+          <h2 class="flex-1 min-w-0 text-lg font-bold text-blue-400 card-title">
             <span class="block truncate" title="${w.name}">${w.name}</span>
           </h2>
-
-          <!-- Match: não encolhe e não quebra linha -->
           <span class="ml-3 shrink-0 whitespace-nowrap rounded-full border border-blue-400 px-3 py-1 text-xs">
             Match: ${Math.round(score)}
           </span>
@@ -75,20 +72,14 @@ function createWeaponCard(w, kind, score) {
   `;
 }
 
-window.applyUpgrade = applyUpgrade;
-window.createStatDisplay = createStatDisplay;
-window.createWeaponCard = createWeaponCard;
-
-document.addEventListener('DOMContentLoaded', () => {
-  const byDataAttr = document.body && document.body.dataset && document.body.dataset.page;
+// Simple top navigation active-state sync
+export function syncTopNavActive() {
+  const byDataAttr = document.body?.dataset?.page;
   const file = (location.pathname.split('/').pop() || '').toLowerCase();
-  const byFile =
-    file.includes('bundle') ? 'bundles' :
-      file.includes('weapon') || file === '' ? 'weapons' :
-        (document.querySelector('[data-nav="bundles"]') ? 'bundles' : 'weapons');
-
+  const byFile = file.includes('bundle')
+      ? 'bundles'
+      : (file.includes('weapon') || file === '' ? 'weapons' : (document.querySelector('[data-nav="bundles"]') ? 'bundles' : 'weapons'));
   const current = byDataAttr || byFile;
-
   document.querySelectorAll('[data-nav]').forEach(a => {
     const on = a.dataset.nav === current;
     a.classList.toggle('bg-blue-600', on);
@@ -96,61 +87,48 @@ document.addEventListener('DOMContentLoaded', () => {
     a.classList.toggle('bg-gray-600', !on);
     a.classList.toggle('text-gray-300', !on);
   });
-});
+}
 
-// Image Zoom Modal — delegação global
+// Image Zoom Modal — one-time initializer
 (function initImageZoom() {
   const modal = document.createElement('div');
   modal.id = 'img-zoom-modal';
-  modal.className =
-    'fixed inset-0 hidden z-[9999] bg-black/70 backdrop-blur-sm ' +
-    'flex items-center justify-center p-4';
-
+  modal.className = 'fixed inset-0 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4';
   modal.innerHTML = `
     <div class="relative max-w-[90vw] max-h-[90vh]">
       <button type="button" class="absolute -top-4 -right-4 w-10 h-10 bg-gray-900/90 border border-gray-600 text-white text-xl" data-close>&times;</button>
       <img src="" alt="" class="block max-w-[90vw] max-h-[90vh] shadow-lg select-none" />
     </div>
   `;
-
-  document.body.appendChild(modal);
-
-  const imgEl = modal.querySelector('img');
-
-  function openZoom(src, alt) {
-    imgEl.src = src;
-    imgEl.alt = alt || '';
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // trava scroll
-  }
-
-  function closeZoom() {
-    modal.classList.add('hidden');
-    imgEl.src = '';
-    document.body.style.overflow = '';
-  }
-
-  // Delegação: funciona para armas e bundles renderizados via JS
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close]')) {
-      closeZoom();
-      return;
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.appendChild(modal);
+    const imgEl = modal.querySelector('img');
+    function openZoom(src, alt) {
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
-
-    const targetImg = e.target.closest('.js-zoomable');
-    if (targetImg) {
-      const src = targetImg.getAttribute('data-zoom-src') || targetImg.src;
-      const alt = targetImg.getAttribute('alt') || '';
-      openZoom(src, alt);
-      return;
+    function closeZoom() {
+      modal.classList.add('hidden');
+      imgEl.src = '';
+      document.body.style.overflow = '';
     }
-
-    // clique fora fecha
-    if (e.target === modal) closeZoom();
-  });
-
-  // ESC fecha
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeZoom();
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-close]')) { closeZoom(); return; }
+      const targetImg = e.target.closest('.js-zoomable');
+      if (targetImg) {
+        const src = targetImg.getAttribute('data-zoom-src') || targetImg.src;
+        const alt = targetImg.getAttribute('alt') || '';
+        openZoom(src, alt); return;
+      }
+      if (e.target === modal) closeZoom();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeZoom(); });
   });
 })();
+
+// Back-compat globals
+window.applyUpgrade = applyUpgrade;
+window.createStatDisplay = createStatDisplay;
+window.createWeaponCard = createWeaponCard;

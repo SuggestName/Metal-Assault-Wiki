@@ -15,7 +15,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
-        image: "src/imagens/bundles/forged_detective.png"
+        image: "imagens/bundles/forged_detective.png"
     },
     {
         name: "Sweatshirts",
@@ -33,7 +33,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo", "Backpack"],
-        image: "src/imagens/bundles/sweatshirt.png"
+        image: "imagens/bundles/sweatshirt.png"
     },
     {
         name: "Spartan Set",
@@ -50,7 +50,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack"],
-        image: "src/imagens/bundles/spartan.png"
+        image: "imagens/bundles/spartan.png"
     },
     {
         name: "Western Friends Set",
@@ -67,7 +67,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/western_friends.png"
+        image: "imagens/bundles/western_friends.png"
     },
     {
         name: "Tears of the Sun Set",
@@ -85,7 +85,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/tears_of_the_sun.png"
+        image: "imagens/bundles/tears_of_the_sun.png"
     },
     {
         name: "FCS Squad Leader Costume",
@@ -103,7 +103,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/fcs_squad_leader.png"
+        image: "imagens/bundles/fcs_squad_leader.png"
     },
     {
         name: "FCS Bundle",
@@ -120,7 +120,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/fcs_bundle.png"
+        image: "imagens/bundles/fcs_bundle.png"
     },
     {
         name: "SWAT Squad Leader Set",
@@ -138,7 +138,7 @@ const bundles = [
             "7 Set": "Movement Speed +3%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/swat_leader.png"
+        image: "imagens/bundles/swat_leader.png"
     },
     {
         name: "ACU Set",
@@ -155,7 +155,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
-        image: "src/imagens/bundles/acu.png"
+        image: "imagens/bundles/acu.png"
     },
     {
         name: "Red Cross Combat Suit",
@@ -172,7 +172,7 @@ const bundles = [
             "7 Set": "Movement Speed +3%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/red_crusader.png"
+        image: "imagens/bundles/red_crusader.png"
     },
     {
         name: "Firefighter Set",
@@ -190,7 +190,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/firefighter.png"
+        image: "imagens/bundles/firefighter.png"
     },
     {
         name: "Rambo Set",
@@ -207,7 +207,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/rambo.png"
+        image: "imagens/bundles/rambo.png"
     },
     {
         name: "Terrorist Set",
@@ -225,7 +225,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/terrorist.png"
+        image: "imagens/bundles/terrorist.png"
     },
     {
         name: "(Black) Alliance Contact Set",
@@ -242,7 +242,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/black_alliance.png"
+        image: "imagens/bundles/black_alliance.png"
     },
     {
         name: "(Green) Wind Alliance Contact Set",
@@ -259,7 +259,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/green_alliance.png"
+        image: "imagens/bundles/green_alliance.png"
     },
     {
         name: "(Red) Fire Alliance Contact Set",
@@ -276,7 +276,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/red_alliance.png"
+        image: "imagens/bundles/red_alliance.png"
     },
     {
         name: "Kung Fu Master Set",
@@ -294,7 +294,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/kung_fu_master.png"
+        image: "imagens/bundles/kung_fu_master.png"
     },
     {
         name: "Jiangshi Zombie Set",
@@ -312,7 +312,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/chinese_zombie.png"
+        image: "imagens/bundles/chinese_zombie.png"
     },
     {
         name: "Panda Set",
@@ -329,7 +329,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo"],
-        image: "src/imagens/bundles/panda_set.png"
+        image: "imagens/bundles/panda_set.png"
     },
     {
         name: "Cat Set",
@@ -347,7 +347,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/cat.png"
+        image: "imagens/bundles/cat.png"
     },
     {
         name: "Ghost Hunter (White Set)",
@@ -365,7 +365,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/ghost_hunter_white.png"
+        image: "imagens/bundles/ghost_hunter_white.png"
     },
     {
         name: "Ghost Hunter (Red Set)",
@@ -383,7 +383,7 @@ const bundles = [
             "7 Set": "Movement Speed +5%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/ghost_hunter_red.png"
+        image: "imagens/bundles/ghost_hunter_red.png"
     },
     {
         name: "Spring Set Red & Black",
@@ -400,7 +400,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes"],
-        image: "src/imagens/bundles/spring_red_black.png"
+        image: "imagens/bundles/spring_red_black.png"
     },
     {
         name: "Pajamas Set",
@@ -418,7 +418,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Shoes", "Backpack"],
-        image: "src/imagens/bundles/pajamas_set.png"
+        image: "imagens/bundles/pajamas_set.png"
     },
     {
         name: "Beach Set Bundle",
@@ -435,7 +435,7 @@ const bundles = [
             "7 Set": "Attack Power +4%"
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/beach_set.png"
+        image: "imagens/bundles/beach_set.png"
     },
     {
         name: "Private Detective Set",
@@ -453,7 +453,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Glasses", "Outfit", "Gloves", "Shoes", "Backpack"],
-        image: "src/imagens/bundles/private_detective.png"
+        image: "imagens/bundles/private_detective.png"
     },
     {
         name: "Elite High School Set",
@@ -471,7 +471,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Glasses", "Outfit", "Shoes", "Backpack", "Ammo"],
-        image: "src/imagens/bundles/elite_high_school.png"
+        image: "imagens/bundles/elite_high_school.png"
     },
     {
         name: "New Christmas Bundle",
@@ -488,7 +488,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack"],
-        image: "src/imagens/bundles/new_christmas.png"
+        image: "imagens/bundles/new_christmas.png"
     },
     {
         name: "2013 Christmas Bundle",
@@ -506,7 +506,7 @@ const bundles = [
             "7 Set": ""
         },
         equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Backpack"],
-        image: "src/imagens/bundles/old_christmas.png"
+        image: "imagens/bundles/old_christmas.png"
     },
     {
         name: "Indonesian School Uniform",
@@ -522,7 +522,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/indonesian_school_uniform.png"
+        image: "imagens/bundles/indonesian_school_uniform.png"
     },
     {
         name: "Indonesian Army Uniform",
@@ -538,7 +538,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/indonesian_army_uniform.png"
+        image: "imagens/bundles/indonesian_army_uniform.png"
     },
     {
         name: "US Navy Bundle",
@@ -554,7 +554,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/us_navy.png"
+        image: "imagens/bundles/us_navy.png"
     },
     {
         name: "Police Officer Bundle",
@@ -570,7 +570,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/police_officer.png"
+        image: "imagens/bundles/police_officer.png"
     },
     {
         name: "Thai King Bundle",
@@ -586,7 +586,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/thai_king.png"
+        image: "imagens/bundles/thai_king.png"
     },
     {
         name: "Spring Pack - White Dragon on Black",
@@ -602,7 +602,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/spring_white_dragon.png"
+        image: "imagens/bundles/spring_white_dragon.png"
     },
     {
         name: "Korean Outfit Bundle",
@@ -618,7 +618,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/korean_outfit.png"
+        image: "imagens/bundles/korean_outfit.png"
     },
     {
         name: "US Marine Squad Leader",
@@ -634,7 +634,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/us_marine.png"
+        image: "imagens/bundles/us_marine.png"
     },
     {
         name: "Ghost Set",
@@ -650,7 +650,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/ghost.png"
+        image: "imagens/bundles/ghost.png"
     },
     {
         name: "GIGN Set",
@@ -666,7 +666,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/gign.png"
+        image: "imagens/bundles/gign.png"
     },
     {
         name: "Green Army Set",
@@ -682,7 +682,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/green_army.png"
+        image: "imagens/bundles/green_army.png"
     },
     {
         name: "Relaxed Bear Set",
@@ -698,7 +698,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/relaxed_bear.png"
+        image: "imagens/bundles/relaxed_bear.png"
     },
     {
         name: "Bruce Lee Set",
@@ -714,7 +714,7 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/bruce_lee.png"
+        image: "imagens/bundles/bruce_lee.png"
     },
     {
         name: "Clown Set (new stats)",
@@ -730,6 +730,6 @@ const bundles = [
             "6 Set": "",
             "7 Set": ""
         },
-        image: "src/imagens/bundles/clown.png"
+        image: "imagens/bundles/clown.png"
     }
 ];
