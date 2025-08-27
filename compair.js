@@ -569,6 +569,90 @@ function updateComparisonPets() {
     cmp.innerHTML = `${createPetCompareCard(p1)}${createPetCompareCard(p2)}`;
 }
 
+/* ==== SEARCH PARA BUNDLES (idêntico ao de Weapons) ==== */
+
+// filtros aplicados sobre o array original window.bundles / bundles
+function applyBundleSearchFromUI(list) {
+    const q = (document.getElementById('bundle-search-name')?.value || '').trim().toLowerCase();
+    const pmaxEl = document.getElementById('bundle-price-max');
+    const pmax = pmaxEl && pmaxEl.value ? Number(pmaxEl.value) : null;
+    const onlyPerm = !!document.getElementById('bundle-only-permanent')?.checked;
+
+    return (list || []).filter(b => {
+        if (q && !String(b.name || '').toLowerCase().includes(q)) return false;
+        if (onlyPerm && b.permanent !== true) return false;
+        if (pmax != null && typeof b.price === 'number' && b.price > pmax) return false;
+        return true;
+    });
+}
+
+function renderBundlesGridFiltered() {
+    const grid = document.getElementById('bundles-grid');
+    const data = (window.bundles || (typeof bundles !== 'undefined' ? bundles : [])) || [];
+    if (!grid) return;
+    const filtered = applyBundleSearchFromUI(data);
+    grid.innerHTML = filtered.length
+        ? filtered.map(createBundleCard).join('')
+        : `<div class="col-span-full text-center text-sm text-gray-400 py-6">No results for this search.</div>`;
+}
+
+function bindBundleSearchInputs() {
+    ['bundle-search-name', 'bundle-price-max', 'bundle-only-permanent'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const evt = el.type === 'checkbox' ? 'change' : 'input';
+        el.addEventListener(evt, renderBundlesGridFiltered);
+    });
+}
+
+function resetBundleFilters() {
+    const q = document.getElementById('bundle-search-name');
+    const p = document.getElementById('bundle-price-max');
+    const c = document.getElementById('bundle-only-permanent');
+    if (q) q.value = '';
+    if (p) p.value = '';
+    if (c) c.checked = false;
+    renderBundlesGridFiltered();
+}
+
+// ===================== PETS: SEARCH (Name) =====================
+function applyPetSearchFromUI(list) {
+    const q = (document.getElementById('pet-search-name')?.value || '').trim().toLowerCase();
+    return (list || []).filter(p => {
+        if (q && !String(p.name || '').toLowerCase().includes(q)) return false;
+        return true;
+    });
+}
+
+function renderPetsGridFiltered() {
+    const grid = document.getElementById('pets-grid');
+    const data = (window.pets || (typeof pets !== 'undefined' ? pets : [])) || [];
+    if (!grid) return;
+    const filtered = applyPetSearchFromUI(data);
+    grid.innerHTML = filtered.length
+        ? filtered.map(createPetCard).join('')
+        : `<div class="col-span-full text-center text-sm text-gray-400 py-6">No results for this search.</div>`;
+}
+
+function bindPetsSearchInputs() {
+    const el = document.getElementById('pet-search-name');
+    if (el) el.addEventListener('input', renderPetsGridFiltered);
+}
+
+function resetPetsFilters() {
+    const q = document.getElementById('pet-search-name');
+    if (q) q.value = '';
+    renderPetsGridFiltered();
+}
+
+// Expor globais
+window.resetBundleFilters = resetBundleFilters;
+window.resetPetsFilters = resetPetsFilters;
+window.bindBundleSearchInputs = bindBundleSearchInputs;
+window.bindPetsSearchInputs = bindPetsSearchInputs;
+window.renderBundlesGridFiltered = renderBundlesGridFiltered;
+window.renderPetsGridFiltered = renderPetsGridFiltered;
+
 // expor no escopo global (usadas no HTML)
 window.initBundles = initBundles;
 window.updateComparisonBundles = updateComparisonBundles;

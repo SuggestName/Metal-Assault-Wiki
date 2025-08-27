@@ -90,7 +90,6 @@
                     <div id="bundles-comparison-display" class="grid md:grid-cols-2 gap-3"></div>
                 </div>
             </div>
-            <h3 class="text-xl font-bold text-blue-400">Available Bundles</h3>
             <div id="bundles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </section>
 
@@ -120,7 +119,6 @@
                     <div id="pets-comparison-display" class="grid md:grid-cols-2 gap-3"></div>
                 </div>
             </div>
-            <h3 class="text-xl font-bold text-blue-400">Available Pets</h3>
             <div id="pets-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </section>
 

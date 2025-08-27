@@ -33,7 +33,7 @@ function showSection(name) {
   if (name === 'weapons') {
     showWeaponType(window.CURRENT_KIND || 'rifles');
   } else if (name === 'bundles') {
-    renderBundlesPage();                                    // monta a página
+    renderBundlesPage();
     document.getElementById('bundles-compare-wrapper')?.classList.add('collapsed');
     document.getElementById('pets-compare-wrapper')?.classList.add('collapsed');
 
@@ -250,13 +250,13 @@ function renderBundlesPage() {
       <h2 class="text-xl font-bold text-blue-400 mb-4 text-center">BUNDLE CATEGORIES</h2>
       <div class="flex justify-center gap-3">
         <button id="bundles-tab-inner" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-bold"
-                onclick="showBundlesInner('bundles')">🧰 BUNDLES</button>
+                onclick="showBundlesInner('bundles')">🧰 BUNDLES aa</button>
         <button id="pets-tab-inner" class="px-4 py-2 bg-gray-600 text-gray-300 rounded-lg text-sm font-bold"
-                onclick="showBundlesInner('pets')">🐾 PETS</button>
+                onclick="showBundlesInner('pets')">🐾 PETS aa</button>
       </div>
     </div>
 
-    <!-- BUNDLES (Compare + Grid) -->
+    <!-- BUNDLES (Compare + Search + Grid) -->
     <section id="bundles-section" class="space-y-6">
       <div id="bundles-compare-wrapper" class="military-card rounded-xl">
         <div class="flex items-center justify-between p-3 border-b border-gray-700 cursor-pointer"
@@ -285,11 +285,33 @@ function renderBundlesPage() {
         </div>
       </div>
 
-      <h3 class="text-xl font-bold text-blue-400">Available Bundles</h3>
+      <!-- SEARCH (igual ao Weapons: Name / Max price / Permanent only) -->
+      <div id="bundles-search-wrapper" class="military-card rounded-xl">
+        <div class="flex items-center justify-between p-3 border-b border-gray-700 cursor-pointer"
+             onclick="toggleCollapse('bundles-search-wrapper','bundles-search-content')">
+          <h3 class="font-bold text-blue-400 text-sm">Search</h3>
+          <span class="chev text-lg">▾</span>
+        </div>
+        <div id="bundles-search-content" class="hidden p-4">
+          <div class="grid md:grid-cols-3 gap-3">
+            <input id="bundle-search-name" type="text" placeholder="Name" class="p-2 bg-gray-800 border border-gray-600 rounded text-sm">
+            <input id="bundle-price-max" type="number" min="0" step="1" placeholder="Max price" class="p-2 bg-gray-800 border border-gray-600 rounded text-sm">
+            <label class="inline-flex items-center gap-2 text-sm">
+              <input id="bundle-only-permanent" type="checkbox" class="accent-blue-500">
+              <span class="text-gray-300">Permanent only</span>
+            </label>
+          </div>
+          <div class="flex justify-end mt-3">
+            <button onclick="resetBundleFilters()" class="px-3 py-1.5 rounded-lg border border-gray-500 hover:bg-gray-700 text-xs">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-blue-400">Armory</h3>
       <div id="bundles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- PETS (Compare + Grid) -->
+    <!-- PETS (Compare + Search + Grid) -->
     <section id="pets-section" class="space-y-6 hidden">
       <div id="pets-compare-wrapper" class="military-card rounded-xl">
         <div class="flex items-center justify-between p-3 border-b border-gray-700 cursor-pointer"
@@ -318,18 +340,42 @@ function renderBundlesPage() {
         </div>
       </div>
 
-      <h3 class="text-xl font-bold text-blue-400">Available Pets</h3>
+      <!-- SEARCH (igual ao Weapons, mas só Name para Pets) -->
+      <div id="pets-search-wrapper" class="military-card rounded-xl">
+        <div class="flex items-center justify-between p-3 border-b border-gray-700 cursor-pointer"
+             onclick="toggleCollapse('pets-search-wrapper','pets-search-content')">
+          <h3 class="font-bold text-blue-400 text-sm">Search</h3>
+          <span class="chev text-lg">▾</span>
+        </div>
+        <div id="pets-search-content" class="hidden p-4">
+          <div class="grid md:grid-cols-3 gap-3">
+            <input id="pet-search-name" type="text" placeholder="Name" class="p-2 bg-gray-800 border border-gray-600 rounded text-sm">
+          </div>
+          <div class="flex justify-end mt-3">
+            <button onclick="resetPetsFilters()" class="px-3 py-1.5 rounded-lg border border-gray-500 hover:bg-gray-700 text-xs">Clear</button>
+          </div>
+        </div>
+      </div>
+
       <div id="pets-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
   `;
 
-  // inicia ambos comparadores colapsados
+  // inicia comparadores e buscas colapsados
   document.getElementById('bundles-compare-wrapper')?.classList.add('collapsed');
   document.getElementById('pets-compare-wrapper')?.classList.add('collapsed');
+  document.getElementById('bundles-search-wrapper')?.classList.add('collapsed');
+  document.getElementById('pets-search-wrapper')?.classList.add('collapsed');
 
   // popula selects + grids
   if (typeof initBundles === 'function') initBundles();
   if (typeof initPets === 'function') initPets();
+
+  // ativa buscadores (idêntico ao Weapons, mas com IDs próprios)
+  if (typeof bindBundleSearchInputs === 'function') bindBundleSearchInputs();
+  if (typeof bindPetsSearchInputs === 'function') bindPetsSearchInputs();
+  if (typeof renderBundlesGridFiltered === 'function') renderBundlesGridFiltered();
+  if (typeof renderPetsGridFiltered === 'function') renderPetsGridFiltered();
 
   // aba interna padrão
   showBundlesInner('bundles');
