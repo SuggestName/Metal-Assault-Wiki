@@ -41,7 +41,7 @@ export function createBundleCard(b) {
         ${b.price !== undefined ? `Price: ${String(b.price)}` : ''} ${b.permanent ? ' <span class="text-green-400">Permanent</span>' : ''}
       </p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${b.image}?v=4.3" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.3">
+        <img src="${b.image}?v=4.6" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.6">
       </div>
       <div class="text-sm text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
       ${equipmentLine}
@@ -64,7 +64,7 @@ export function createBundleCompareCard(b) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${b.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${b.image}?v=4.3" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.3">
+        <img src="${b.image}?v=4.6" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.6">
       </div>
       <div class="text-xs text-gray-300">Price: <span class="text-white font-semibold">${b.price ?? '-'}</span></div>
       <div class="text-xs text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
@@ -130,7 +130,7 @@ export function createPetCard(p) {
       </div>
       <p class="text-yellow-400 font-bold text-sm mb-2">${htmlEscape(p.source ?? '')}</p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${htmlEscape(p.image)}?v=4.3" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.3">
+        <img src="${htmlEscape(p.image)}?v=4.6" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.6">
       </div>
       ${petStatsTable(p)}
     </div>
@@ -142,7 +142,7 @@ export function createPetCompareCard(p) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${htmlEscape(p.name)}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${htmlEscape(p.image)}?v=4.3" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.3">
+        <img src="${htmlEscape(p.image)}?v=4.6" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.6">
       </div>
       <div class="text-xs text-yellow-300 font-semibold mb-2">${htmlEscape(p.source ?? '')}</div>
       ${petStatsTable(p)}
@@ -238,14 +238,146 @@ export function resetPetsFilters() {
   renderPetsGridFiltered();
 }
 
+// normaliza e imprime "stats" em tabela simples
+function wingStatsTable(w) {
+  const rows = Object.entries(w.stats || {}).map(([k, v]) => {
+    return `
+      <tr class="text-xs">
+        <td class="pr-2 py-0.5 text-blue-300 font-semibold">${String(k).replace(/([A-Z])/g, ' $1')}</td>
+        <td class="px-2 py-0.5 text-left">${String(v)}</td>
+      </tr>
+    `;
+  }).join('');
+  return `
+    <table class="w-full">
+      <thead class="text-[11px] text-gray-400">
+        <tr><th class="text-left">Stat</th><th class="px-2 text-left">Value</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+export function createWingCard(w) {
+  return `
+    <div class="bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-lg font-bold text-blue-400">${w.name}</h2>
+      </div>
+      <p class="text-yellow-400 font-bold text-sm mb-2">${w.price ?? ''}</p>
+      <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
+        <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
+      </div>
+      ${wingStatsTable(w)}
+      ${Array.isArray(w.effects) && w.effects.length ? `
+        <div class="mt-3">
+          <div class="text-gray-300 font-semibold text-sm mb-1">Effects:</div>
+          <ul class="space-y-0.5 text-xs">${w.effects.map(t => `<li>${t}</li>`).join('')}</ul>
+        </div>` : ``}
+    </div>
+  `;
+}
+
+export function createWingCompareCard(w) {
+  if (!w) return `<div class="comparison-card rounded-lg p-3 text-center text-sm"><p class="text-gray-400">Select a wing</p></div>`;
+  return `
+    <div class="comparison-card rounded-lg p-3">
+      <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${w.name}</h3>
+      <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
+        <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
+      </div>
+      <div class="text-xs text-yellow-300 font-semibold mb-2">${w.price ?? ''}</div>
+      ${wingStatsTable(w)}
+      ${Array.isArray(w.effects) && w.effects.length ? `
+        <div class="mt-2">
+          <div class="text-gray-300 font-semibold text-xs mb-1">Effects:</div>
+          <ul class="space-y-0.5 text-xs">${w.effects.map(t => `<li>${t}</li>`).join('')}</ul>
+        </div>` : ``}
+    </div>
+  `;
+}
+
+export function initWings() {
+  const grid = document.getElementById('wings-grid');
+  const s1 = document.getElementById('wing1-select');
+  const s2 = document.getElementById('wing2-select');
+  const data = (window.wings || (typeof wings !== 'undefined' ? wings : []));
+  if (!grid || !s1 || !s2 || !Array.isArray(data)) return;
+  grid.innerHTML = data.map(createWingCard).join('');
+  s1.innerHTML = `<option value="" selected disabled>Select Wing</option>`;
+  s2.innerHTML = `<option value="" selected disabled>Select Wing</option>`;
+  data.forEach((w, i) => { s1.add(new Option(w.name, i)); s2.add(new Option(w.name, i)); });
+}
+
+export function updateComparisonWings() {
+  const s1 = document.getElementById('wing1-select');
+  const s2 = document.getElementById('wing2-select');
+  const cmp = document.getElementById('wings-comparison-display');
+  const data = (window.wings || (typeof wings !== 'undefined' ? wings : []));
+  if (!s1 || !s2 || !cmp || !Array.isArray(data)) return;
+  const w1 = data[s1.value];
+  const w2 = data[s2.value];
+  cmp.innerHTML = `${createWingCompareCard(w1)}${createWingCompareCard(w2)}`;
+}
+
+/* Busca simples por nome e preço (se houver numérico) */
+export function applyWingSearchFromUI(list) {
+  const q = (document.getElementById('wing-search-name')?.value || '').trim().toLowerCase();
+  const pmaxEl = document.getElementById('wing-price-max');
+  const pmax = pmaxEl && pmaxEl.value ? Number(pmaxEl.value) : null;
+  return (list || []).filter(w => {
+    if (q && !String(w.name || '').toLowerCase().includes(q)) return false;
+    if (pmax != null) {
+      const priceNum = Number(String(w.price).replace(/\D+/g, '')); // tenta extrair número
+      if (Number.isFinite(priceNum) && priceNum > pmax) return false;
+    }
+    return true;
+  });
+}
+export function renderWingsGridFiltered() {
+  const grid = document.getElementById('wings-grid');
+  const data = (window.wings || (typeof wings !== 'undefined' ? wings : [])) || [];
+  if (!grid) return;
+  const filtered = applyWingSearchFromUI(data);
+  grid.innerHTML = filtered.length
+    ? filtered.map(createWingCard).join('')
+    : `<div class="col-span-full text-center text-sm text-gray-400 py-6">No results for this search.</div>`;
+}
+export function bindWingsSearchInputs() {
+  ['wing-search-name', 'wing-price-max'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const evt = el.type === 'checkbox' ? 'change' : 'input';
+    el.addEventListener(evt, renderWingsGridFiltered);
+  });
+}
+export function resetWingsFilters() {
+  const q = document.getElementById('wing-search-name');
+  const p = document.getElementById('wing-price-max');
+  if (q) q.value = '';
+  if (p) p.value = '';
+  renderWingsGridFiltered();
+}
+
+
 // Globals for compatibility
 window.resetBundleFilters = resetBundleFilters;
 window.resetPetsFilters = resetPetsFilters;
+window.resetWingsFilters = resetWingsFilters;
+
 window.bindBundleSearchInputs = bindBundleSearchInputs;
 window.bindPetsSearchInputs = bindPetsSearchInputs;
+window.bindWingsSearchInputs = bindWingsSearchInputs;
+
 window.renderBundlesGridFiltered = renderBundlesGridFiltered;
 window.renderPetsGridFiltered = renderPetsGridFiltered;
+window.renderWingsGridFiltered = renderWingsGridFiltered;
+
 window.initBundles = initBundles;
 window.updateComparisonBundles = updateComparisonBundles;
+
 window.initPets = initPets;
 window.updateComparisonPets = updateComparisonPets;
+
+window.initWings = initWings;
+window.updateComparisonWings = updateComparisonWings;

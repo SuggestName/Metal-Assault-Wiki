@@ -74,7 +74,7 @@ export function createComparisonCard(kind, item, n) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${item.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${item.image}?v=4.3" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=4.3">
+        <img src="${item.image}?v=4.6" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=4.6">
       </div>
       <div class="border-t border-gray-600 my-2"></div>
       <div class="space-y-1">

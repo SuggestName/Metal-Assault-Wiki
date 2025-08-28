@@ -53,7 +53,7 @@ export function createWeaponCard(w, kind, score) {
         </div>
       ${subtitle ? `<p class="text-yellow-400 font-bold text-sm mb-2">${subtitle}</p>` : ''}
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${w.image}?v=4.3" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.3">
+        <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
       </div>
       ${('ammo' in w || 'magazines' in w) ? `
         <div class="text-center -mt-2 mb-2">
