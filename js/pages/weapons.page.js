@@ -1,5 +1,5 @@
 // pages/weapons.page.js
-import { UPGRADE_CFG } from '../data/datasets.js';
+import { UPGRADE_CFG, colorizeStatLabelByKey } from '../data/datasets.js';
 import { toggleCollapse } from '../ui/collapse.js';
 import { initCategory, bindRankingSliders, bindSearchInputs, updateRankAndRender, setRankingPreset } from '../features/weapons/engine.js';
 
@@ -18,16 +18,18 @@ function setActiveInnerWeapon(kind) {
 
 export function updateWeightsLabelsForKind(kind) {
   const acc = document.getElementById('rank-accuracy-label');
-  const bs = document.getElementById('rank-bulletSpeed-label');
+  const bs  = document.getElementById('rank-bulletSpeed-label');
   if (!acc || !bs) return;
+
   if (kind === 'shields') {
-    acc.textContent = 'Explosion Defense';
-    bs.textContent = 'Defense';
+    acc.innerHTML = colorizeStatLabelByKey('explosionResist', 'Explosion Resistence');
+    bs.innerHTML  = colorizeStatLabelByKey('defense', 'Defense');
   } else {
-    acc.textContent = 'Accuracy';
-    bs.textContent = 'Bullet Speed';
+    acc.innerHTML = colorizeStatLabelByKey('accuracy', 'Accuracy');
+    bs.innerHTML  = colorizeStatLabelByKey('bulletSpeed', 'Bullet Speed');
   }
 }
+
 
 function renderPresetButtons(kind) {
   if (kind === 'shields') {
@@ -137,23 +139,23 @@ export function renderCategoryPage(kind) {
       <div id="rank-content" class="hidden p-4">
         <div class="grid md:grid-cols-2 gap-4">
           <div>
-            <div class="flex justify-between text-xs text-gray-300"><span id="rank-damage-label">Damage</span><span id="rank-damage-val" class="text-gray-400">50</span></div>
+            <div class="flex justify-between text-xs text-gray-300"><span id="rank-damage-label">${colorizeStatLabelByKey('damage','Damage')}</span><span id="rank-damage-val" class="text-gray-400">50</span></div>
             <input id="rank-damage" type="range" min="0" max="100" value="50" class="w-full">
           </div>
           <div>
-            <div class="flex justify-between text-xs text-gray-300"><span id="rank-rateOfFire-label">Rate of Fire</span><span id="rank-rateOfFire-val" class="text-gray-400">50</span></div>
+            <div class="flex justify-between text-xs text-gray-300"><span id="rank-rateOfFire-label">${colorizeStatLabelByKey('rateOfFire','Rate of Fire')}</span><span id="rank-rateOfFire-val" class="text-gray-400">50</span></div>
             <input id="rank-rateOfFire" type="range" min="0" max="100" value="50" class="w-full">
           </div>
           <div>
-            <div class="flex justify-between text-xs text-gray-300"><span id="rank-range-label">Range</span><span id="rank-range-val" class="text-gray-400">50</span></div>
+            <div class="flex justify-between text-xs text-gray-300"><span id="rank-range-label">${colorizeStatLabelByKey('range','Range')}</span><span id="rank-range-val" class="text-gray-400">50</span></div>
             <input id="rank-range" type="range" min="0" max="100" value="50" class="w-full">
           </div>
           <div>
-            <div class="flex justify-between text-xs text-gray-300"><span id="rank-accuracy-label">Accuracy</span><span id="rank-accuracy-val" class="text-gray-400">50</span></div>
+            <div class="flex justify-between text-xs text-gray-300"><span id="rank-accuracy-label">${colorizeStatLabelByKey('accuracy','Accuracy')}</span><span id="rank-accuracy-val" class="text-gray-400">50</span></div>
             <input id="rank-accuracy" type="range" min="0" max="100" value="50" class="w-full">
           </div>
           <div>
-            <div class="flex justify-between text-xs text-gray-300"><span id="rank-bulletSpeed-label">Bullet Speed</span><span id="rank-bulletSpeed-val" class="text-gray-400">50</span></div>
+            <div class="flex justify-between text-xs text-gray-300"><span id="rank-bulletSpeed-label">${colorizeStatLabelByKey('bulletSpeed','Bullet Speed')}</span><span id="rank-bulletSpeed-val" class="text-gray-400">50</span></div>
             <input id="rank-bulletSpeed" type="range" min="0" max="100" value="50" class="w-full">
           </div>
         </div>

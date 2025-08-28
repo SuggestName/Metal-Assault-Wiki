@@ -41,34 +41,29 @@ const wings = [
         image: "imagens/wings/pink-tradable.png",
         price: "150 Gold",
         stats: { speed: "+5%", hp: "+9%", defense: "+3%" },
-        effects: ["1 Set: Defense +3%"]
     },
     {
         name: "Angel Wings (Tradable, Permanent)",
         image: "imagens/wings/angel-tradable.png",
         price: "150 Gold",
         stats: { rateOfFire: "+2%", speed: "+5%", hp: "+9%" },
-        effects: ["1 Set: Rate of Fire +2%"]
     },
     {
         name: "Demon Wings (Tradable, Permanent)",
         image: "imagens/wings/demon-tradable.png",
         price: "150 Gold",
         stats: { bulletSpeed: "+3%", speed: "+5%", hp: "+9%" },
-        effects: ["1 Set: Bullet Speed +3%"]
     },
     {
         name: "Green Wings (Tradable, Permanent)",
         image: "imagens/wings/green-tradable.png",
         price: "150 Gold",
         stats: { speed: "+5%", explosionResist: "+2%", hp: "+9%" },
-        effects: ["1 Set: Explosion Resist +2%"]
     },
     {
         name: "Red Wings (Tradable, Permanent)",
         image: "imagens/wings/red-tradable.png",
         price: "150 Gold",
         stats: { damage: "+3%", speed: "+5%", hp: "+9%" },
-        effects: ["1 Set: Attack Power +3%"]
     }
 ]

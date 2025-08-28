@@ -3,7 +3,6 @@ import { syncTopNavActive } from './lib/ui-utils.js';
 import { setActiveTopTabs, setActiveSubtabs } from './ui/nav.js';
 import { renderCategoryPage, updateWeightsLabelsForKind } from './pages/weapons.page.js';
 import { renderBundlesPage } from './pages/bundles.page.js';
-import { toggleCollapse } from './ui/collapse.js';
 
 // App state
 window.CURRENT_KIND = 'rifles';

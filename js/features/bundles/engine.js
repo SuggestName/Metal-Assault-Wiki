@@ -1,5 +1,5 @@
 // features/bundles/engine.js
-import { toggleCollapse } from '../../ui/collapse.js';
+import { STAT_ALIASES, colorizeEffectTextUniversal, colorizeStatLabelByKey, statsObjectToEffectLines } from '../../data/datasets.js';
 
 function htmlEscape(s) { return String(s ?? '').replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m])); }
 
@@ -22,7 +22,14 @@ function normalizeBundleEffects(b) {
   return [];
 }
 function bundleEffectsList(b) {
-  const items = normalizeBundleEffects(b).map(it => `<li class="text-xs"><span class="text-blue-300 font-semibold">${String(it.label)}</span>: ${String(it.text)}</li>`).join('');
+  const items = normalizeBundleEffects(b)
+    .map(it => {
+      const coloredText = colorizeEffectTextUniversal(it.text);
+      return `<li class="text-xs">
+        <span class="text-blue-300 font-semibold inline-block min-w-[100px]">${String(it.label)}</span>
+        <span class="ml-1">: ${coloredText}</span>
+     </li>`;
+    }).join('');
   return items ? `<ul class="space-y-0.5">${items}</ul>` : `<p class="text-xs text-gray-400">No effects listed</p>`;
 }
 
@@ -104,24 +111,38 @@ function petStatsTable(p) {
     const b = vals?.battle ?? '-';
     const m = vals?.mission ?? '-';
     const c = vals?.coop ?? '-';
+
+    // Detecta o atributo pelo alias (Attack Power, HP, Rate of Fire, etc.)
+    const pair = STAT_ALIASES.find(([key, rx]) => rx.test(String(name)));
+    const nameHtml = pair
+      ? colorizeStatLabelByKey(pair[0], name)
+      : `<span class="text-blue-300 font-semibold">${htmlEscape(name)}</span>`;
+
     return `
       <tr class="text-xs">
-        <td class="pr-2 py-0.5 text-blue-300 font-semibold">${htmlEscape(name)}</td>
+        <td class="pr-2 py-0.5">${nameHtml}</td>
         <td class="px-2 py-0.5 text-center">${htmlEscape(b)}</td>
         <td class="px-2 py-0.5 text-center">${htmlEscape(m)}</td>
         <td class="px-2 py-0.5 text-center">${htmlEscape(c)}</td>
       </tr>
     `;
   }).join('');
+
   return `
     <table class="w-full">
       <thead class="text-[11px] text-gray-400">
-        <tr><th class="text-left">Stat</th><th class="px-2">Battle</th><th class="px-2">Mission</th><th class="px-2">Co-op</th></tr>
+        <tr>
+          <th class="text-left">Stat</th>
+          <th class="px-2">Battle</th>
+          <th class="px-2">Mission</th>
+          <th class="px-2">Co-op</th>
+        </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
   `;
 }
+
 export function createPetCard(p) {
   return `
     <div class="bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition">
@@ -238,41 +259,45 @@ export function resetPetsFilters() {
   renderPetsGridFiltered();
 }
 
-// normaliza e imprime "stats" em tabela simples
-function wingStatsTable(w) {
-  const rows = Object.entries(w.stats || {}).map(([k, v]) => {
-    return `
-      <tr class="text-xs">
-        <td class="pr-2 py-0.5 text-blue-300 font-semibold">${String(k).replace(/([A-Z])/g, ' $1')}</td>
-        <td class="px-2 py-0.5 text-left">${String(v)}</td>
-      </tr>
-    `;
-  }).join('');
-  return `
-    <table class="w-full">
-      <thead class="text-[11px] text-gray-400">
-        <tr><th class="text-left">Stat</th><th class="px-2 text-left">Value</th></tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
-  `;
+function wingStatsToEffectLines(stats = {}) {
+  const lines = [];
+  WING_ORDER.forEach(key => {
+    if (stats[key] != null) {
+      const label = WING_LABELS[key] || key;
+      const color = WING_COLORS[key] || "text-gray-200";
+      lines.push(`<span class="${color} font-semibold">${label}</span> ${stats[key]}`);
+    }
+  });
+  Object.keys(stats).forEach(k => {
+    if (!WING_ORDER.includes(k) && stats[k] != null) {
+      const label = WING_LABELS[k] || k;
+      const color = WING_COLORS[k] || "text-gray-200";
+      lines.push(`<span class="${color} font-semibold">${label}</span> ${stats[k]}`);
+    }
+  });
+  return lines;
 }
 
 export function createWingCard(w) {
+  const statLines = statsObjectToEffectLines(w.stats); // cores e ordem universais
+  const extra = (Array.isArray(w.effects) ? w.effects : []).map(colorizeEffectTextUniversal);
+  const all = [...statLines, ...extra];
+
   return `
-    <div class="bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition">
+    <div class="weapon-card w-full min-w-0 bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition">
       <div class="flex justify-between items-center mb-2">
-        <h2 class="text-lg font-bold text-blue-400">${w.name}</h2>
+        <h2 class="flex-1 min-w-0 text-lg font-bold text-blue-400 card-title">
+          <span class="block truncate" title="${w.name}">${w.name}</span>
+        </h2>
       </div>
-      <p class="text-yellow-400 font-bold text-sm mb-2">${w.price ?? ''}</p>
+      <p class="text-yellow-400 font-bold text-sm mb-3">${w.price ?? ''}</p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
         <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
       </div>
-      ${wingStatsTable(w)}
-      ${Array.isArray(w.effects) && w.effects.length ? `
-        <div class="mt-3">
+      ${all.length ? `
+        <div>
           <div class="text-gray-300 font-semibold text-sm mb-1">Effects:</div>
-          <ul class="space-y-0.5 text-xs">${w.effects.map(t => `<li>${t}</li>`).join('')}</ul>
+          <ul class="space-y-0.5 text-xs">${all.map(t => `<li>${t}</li>`).join('')}</ul>
         </div>` : ``}
     </div>
   `;
@@ -280,6 +305,11 @@ export function createWingCard(w) {
 
 export function createWingCompareCard(w) {
   if (!w) return `<div class="comparison-card rounded-lg p-3 text-center text-sm"><p class="text-gray-400">Select a wing</p></div>`;
+
+  const statLines = statsObjectToEffectLines(w.stats);
+  const extra = (Array.isArray(w.effects) ? w.effects : []).map(colorizeEffectTextUniversal);
+  const all = [...statLines, ...extra];
+
   return `
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${w.name}</h3>
@@ -287,11 +317,10 @@ export function createWingCompareCard(w) {
         <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
       </div>
       <div class="text-xs text-yellow-300 font-semibold mb-2">${w.price ?? ''}</div>
-      ${wingStatsTable(w)}
-      ${Array.isArray(w.effects) && w.effects.length ? `
-        <div class="mt-2">
+      ${all.length ? `
+        <div>
           <div class="text-gray-300 font-semibold text-xs mb-1">Effects:</div>
-          <ul class="space-y-0.5 text-xs">${w.effects.map(t => `<li>${t}</li>`).join('')}</ul>
+          <ul class="space-y-0.5 text-xs">${all.map(t => `<li>${t}</li>`).join('')}</ul>
         </div>` : ``}
     </div>
   `;

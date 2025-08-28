@@ -94,7 +94,7 @@ const bundles = [
         parts: 7,
         expBonus: '+10%',
         stats: {
-            "1 Set": "Accurancy +3%",
+            "1 Set": "Accuracy +3%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -112,7 +112,7 @@ const bundles = [
         parts: 7,
         expBonus: null,
         stats: {
-            "1 Set": "Accurancy +10%",
+            "1 Set": "Accuracy +10%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -147,7 +147,7 @@ const bundles = [
         parts: 7,
         expBonus: null,
         stats: {
-            "1 Set": "Accurancy +4%",
+            "1 Set": "Accuracy +4%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +3%",
@@ -181,7 +181,7 @@ const bundles = [
         permanent: true,
         parts: 7,
         stats: {
-            "1 Set": "Accurancy +3%",
+            "1 Set": "Accuracy +3%",
             "2 Set": "Range +2%",
             "3 Set": "Rate of Fire +2%",
             "4 Set": "Bullet Speed +3%",
@@ -199,7 +199,7 @@ const bundles = [
         parts: 7,
         expBonus: null,
         stats: {
-            "1 Set": "Accurancy +10%",
+            "1 Set": "Accuracy +10%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -356,7 +356,7 @@ const bundles = [
         parts: 7,
         expBonus: null,
         stats: {
-            "1 Set": "Accurancy +10%",
+            "1 Set": "Accuracy +10%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -374,7 +374,7 @@ const bundles = [
         parts: 7,
         expBonus: "+10%",
         stats: {
-            "1 Set": "Accurancy +3%",
+            "1 Set": "Accuracy +3%",
             "2 Set": "Range +3%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -392,7 +392,7 @@ const bundles = [
         parts: 7,
         expBonus: "+10%",
         stats: {
-            "1 Set": "Accurancy +3%",
+            "1 Set": "Accuracy +3%",
             "2 Set": "Range +4%",
             "3 Set": "Rate of Fire +4%",
             "4 Set": "Bullet Speed +5%",
@@ -446,7 +446,7 @@ const bundles = [
         stats: {
             "1 Set": "Bullet Speed +4%",
             "2 Set": "Defense +4%",
-            "3 Set": "Accurancy +4%",
+            "3 Set": "Accuracy +4%",
             "4 Set": "Rate of Fire +4%",
             "5 Set": "Hp +4%",
             "6 Set": "Rate of Fire +4%",

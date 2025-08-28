@@ -1,6 +1,6 @@
 // features/weapons/engine.js
 import { applyUpgrade, createStatDisplay, createWeaponCard } from '../../lib/ui-utils.js';
-import { UPGRADE_CFG, getUpgradableStats, STAT_LABELS, DATASETS } from '../../data/datasets.js';
+import { UPGRADE_CFG, getUpgradableStats, STAT_LABELS, DATASETS, colorizeStatLabelByKey } from '../../data/datasets.js';
 
 /** ===== Upgrades state ===== */
 function buildUpgradePair(stats) {
@@ -44,9 +44,10 @@ export function updateMasterUpgradeWeapon(kind, n) {
 export function createStatDisplayWithUpgradeWeapon(kind, label, base, fin, n, stat) {
   const cfg = UPGRADE_CFG[kind];
   const up = upgradeValuesWeapon?.[kind]?.[n]?.[stat] ?? 0;
+  const colored = colorizeStatLabelByKey(stat, label);
   return `
     <div class="flex justify-between items-center text-[11px] py-0.5">
-      <span class="text-gray-400 ${cfg.labelW}">${label}:</span>
+      <span class="min-w-[100px] text-left">${colored}:</span>
       <div class="flex items-center space-x-1">
         <span class="text-gray-500 w-6 text-center">${base}</span>
         <button onclick="changeUpgradeWeapon('${kind}', ${n}, '${stat}', -1)" class="bg-red-600 hover:bg-red-700 w-5 h-5 rounded text-[10px]">-</button>
@@ -69,7 +70,10 @@ export function createComparisonCard(kind, item, n) {
   const stats = { damage: item.damage, mobility: item.mobility };
   const upStats = getUpgradableStats(kind);
   upStats.forEach(st => { stats[st] = applyUpgrade(item[st], up[st]); });
-  const rows = upStats.map(st => createStatDisplayWithUpgradeWeapon(kind, STAT_LABELS[st], item[st], stats[st], n, st)).join('');
+  const rows = upStats.map(st =>
+    createStatDisplayWithUpgradeWeapon(kind, STAT_LABELS[st], item[st], stats[st], n, st)
+  ).join('');
+
   return `
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${item.name}</h3>
@@ -78,9 +82,9 @@ export function createComparisonCard(kind, item, n) {
       </div>
       <div class="border-t border-gray-600 my-2"></div>
       <div class="space-y-1">
-        ${createStatDisplay('Damage', stats.damage)}
+        ${createStatDisplay(colorizeStatLabelByKey('damage','Damage'), stats.damage)}
         ${rows}
-        ${createStatDisplay('Mobility', stats.mobility)}
+        ${createStatDisplay(colorizeStatLabelByKey('mobility','Mobility'), stats.mobility)}
       </div>
     </div>
   `;
@@ -121,7 +125,7 @@ function getTargetFromUI(kind) {
       damage: v('damage'),
       rateOfFire: v('rateOfFire'),
       range: v('range'),
-      explosionDefense: v('accuracy'),
+      explosionResist: v('accuracy'),
       defense: v('bulletSpeed'),
     };
   }

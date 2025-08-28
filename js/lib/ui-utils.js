@@ -1,6 +1,4 @@
-// ui-utils.js
-// Shared small utilities and UI building helpers.
-// Expose to window for backward compatibility, and export for ES modules.
+import { colorizeStatLabelByKey } from '../data/datasets.js';
 
 export function applyUpgrade(base, inc) {
   const b = Number(base) || 0;
@@ -20,17 +18,17 @@ export function createStatDisplay(label, value) {
 export function displayStatsFor(kind, w) {
   if (kind === 'shields') {
     return [
-      createStatDisplay('Rate of Fire', w.rateOfFire),
-      createStatDisplay('Range', w.range),
-      createStatDisplay('Explosion Defense', w.explosionDefense),
-      createStatDisplay('Defense', w.defense),
+      createStatDisplay(colorizeStatLabelByKey('rateOfFire', 'Rate of Fire'), w.rateOfFire),
+      createStatDisplay(colorizeStatLabelByKey('range', 'Range'), w.range),
+      createStatDisplay(colorizeStatLabelByKey('explosionResist', 'Explosion Resistence'), w.explosionResist),
+      createStatDisplay(colorizeStatLabelByKey('defense', 'Defense'), w.defense),
     ].join('');
   }
   return [
-    createStatDisplay('Rate of Fire', w.rateOfFire),
-    createStatDisplay('Range', w.range),
-    createStatDisplay('Accuracy', w.accuracy),
-    createStatDisplay('Bullet Speed', w.bulletSpeed),
+    createStatDisplay(colorizeStatLabelByKey('rateOfFire', 'Rate of Fire'), w.rateOfFire),
+    createStatDisplay(colorizeStatLabelByKey('range', 'Range'), w.range),
+    createStatDisplay(colorizeStatLabelByKey('accuracy', 'Accuracy'), w.accuracy),
+    createStatDisplay(colorizeStatLabelByKey('bulletSpeed', 'Bullet Speed'), w.bulletSpeed),
   ].join('');
 }
 
@@ -64,9 +62,9 @@ export function createWeaponCard(w, kind, score) {
         </div>
       ` : ``}
       <div class="space-y-1">
-        ${createStatDisplay('Damage', w.damage)}
+        ${createStatDisplay(colorizeStatLabelByKey('damage', 'Damage'), w.damage)}
         ${displayStatsFor(kind, w)}
-        ${createStatDisplay('Mobility', w.mobility)}
+        ${createStatDisplay(colorizeStatLabelByKey('mobility', 'Mobility'), w.mobility)}
       </div>
     </div>
   `;
@@ -77,8 +75,8 @@ export function syncTopNavActive() {
   const byDataAttr = document.body?.dataset?.page;
   const file = (location.pathname.split('/').pop() || '').toLowerCase();
   const byFile = file.includes('bundle')
-      ? 'bundles'
-      : (file.includes('weapon') || file === '' ? 'weapons' : (document.querySelector('[data-nav="bundles"]') ? 'bundles' : 'weapons'));
+    ? 'bundles'
+    : (file.includes('weapon') || file === '' ? 'weapons' : (document.querySelector('[data-nav="bundles"]') ? 'bundles' : 'weapons'));
   const current = byDataAttr || byFile;
   document.querySelectorAll('[data-nav]').forEach(a => {
     const on = a.dataset.nav === current;

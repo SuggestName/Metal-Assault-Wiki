@@ -8,7 +8,7 @@ const shields = [
         rateOfFire: 70,
         range: 33,
         mobility: 94,
-        explosionDefense: 11,
+        explosionResist: 11,
         defense: 63
     },
     {
@@ -20,7 +20,7 @@ const shields = [
         rateOfFire: 73,
         range: 33,
         mobility: 94,
-        explosionDefense: 11,
+        explosionResist: 11,
         defense: 68
     },
     {
@@ -32,7 +32,7 @@ const shields = [
         rateOfFire: 66,
         range: 33,
         mobility: 94,
-        explosionDefense: 13,
+        explosionResist: 13,
         defense: 73
     },
     {
@@ -44,7 +44,7 @@ const shields = [
         rateOfFire: 71,
         range: 33,
         mobility: 94,
-        explosionDefense: 12,
+        explosionResist: 12,
         defense: 58
     },
     {
@@ -56,7 +56,7 @@ const shields = [
         rateOfFire: 40,
         range: 25,
         mobility: 94,
-        explosionDefense: 14,
+        explosionResist: 14,
         defense: 78
     },
     {
@@ -68,7 +68,7 @@ const shields = [
         rateOfFire: 75,
         range: 33,
         mobility: 94,
-        explosionDefense: 10,
+        explosionResist: 10,
         defense: 53
     }
 ];
