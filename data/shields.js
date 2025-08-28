@@ -70,5 +70,17 @@ const shields = [
         mobility: 94,
         explosionResist: 10,
         defense: 53
-    }
+    },
+    {
+        name: "Iron Shield",
+        duration: "Permanent",
+        price: "50k Honnor Points",
+        image: "imagens/shields/iron_shield.png",
+        damage: 55,
+        rateOfFire: 67,
+        range: 33,
+        mobility: 90,
+        explosionResist: 9,
+        defense: 50
+    },
 ];
