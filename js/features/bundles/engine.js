@@ -48,7 +48,7 @@ export function createBundleCard(b) {
         ${b.price !== undefined ? `Price: ${String(b.price)}` : ''} ${b.permanent ? ' <span class="text-green-400">Permanent</span>' : ''}
       </p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${b.image}?v=4.6" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.6">
+        <img src="${b.image}?v=4.8" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.8">
       </div>
       <div class="text-sm text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
       ${equipmentLine}
@@ -71,7 +71,7 @@ export function createBundleCompareCard(b) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${b.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${b.image}?v=4.6" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.6">
+        <img src="${b.image}?v=4.8" alt="${b.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${b.image}?v=4.8">
       </div>
       <div class="text-xs text-gray-300">Price: <span class="text-white font-semibold">${b.price ?? '-'}</span></div>
       <div class="text-xs text-gray-300">Parts: <span class="text-white font-semibold">${partsShown}</span></div>
@@ -151,7 +151,7 @@ export function createPetCard(p) {
       </div>
       <p class="text-yellow-400 font-bold text-sm mb-2">${htmlEscape(p.source ?? '')}</p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${htmlEscape(p.image)}?v=4.6" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.6">
+        <img src="${htmlEscape(p.image)}?v=4.8" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.8">
       </div>
       ${petStatsTable(p)}
     </div>
@@ -163,7 +163,7 @@ export function createPetCompareCard(p) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${htmlEscape(p.name)}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${htmlEscape(p.image)}?v=4.6" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.6">
+        <img src="${htmlEscape(p.image)}?v=4.8" alt="${htmlEscape(p.name)}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${p.image}?v=4.8">
       </div>
       <div class="text-xs text-yellow-300 font-semibold mb-2">${htmlEscape(p.source ?? '')}</div>
       ${petStatsTable(p)}
@@ -292,7 +292,7 @@ export function createWingCard(w) {
       </div>
       <p class="text-yellow-400 font-bold text-sm mb-3">${w.price ?? ''}</p>
       <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
+        <img src="${w.image}?v=4.8" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.8">
       </div>
       ${all.length ? `
         <div>
@@ -314,7 +314,7 @@ export function createWingCompareCard(w) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${w.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${w.image}?v=4.6" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.6">
+        <img src="${w.image}?v=4.8" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.8">
       </div>
       <div class="text-xs text-yellow-300 font-semibold mb-2">${w.price ?? ''}</div>
       ${all.length ? `

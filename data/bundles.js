@@ -1,5 +1,23 @@
 const bundles = [
     {
+        name: "Rabbit Outfit",
+        price: "Lottery - Limited",
+        permanent: true,
+        parts: 6,
+        expBonus: null,
+        stats: {
+            "1 Set": "Range +4%",
+            "2 Set": "Bullet Speed +5%",
+            "3 Set": "Rate of Fire +4%",
+            "4 Set": "HP +3%",
+            "5 Set": "Attack Power +3%",
+            "6 Set": "Movement Speed +5% (+6% Item)",
+            "7 Set": ""
+        },
+        equipment: ["Helmet", "Outfit", "Gloves", "Shoes", "Ammo", "Backpack"],
+        image: "imagens/bundles/rabbit.png"
+    },
+    {
         name: "Forged White Detective",
         price: "Lottery - Limited",
         permanent: true,
@@ -530,11 +548,11 @@ const bundles = [
         name: "Indonesian School Uniform",
         price: 188.00,
         permanent: true,
-        parts: 0,
+        parts: 3,
         stats: {
-            "1 Set": "",
-            "2 Set": "",
-            "3 Set": "",
+            "1 Set": "HP +3%",
+            "2 Set": "Attack Power +3%",
+            "3 Set": "Movement Speed +5%",
             "4 Set": "",
             "5 Set": "",
             "6 Set": "",

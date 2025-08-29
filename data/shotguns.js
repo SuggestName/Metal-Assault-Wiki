@@ -1,5 +1,18 @@
 const shotguns = [
     {
+        name: "SG200 Salamander",
+        ammo: 8, magazines: 5,
+        duration: "Permanent",
+        price: "Cash Reward",
+        image: "imagens/shotguns/sg200.png",
+        damage: 88,
+        rateOfFire: 70,
+        range: 72,
+        accuracy: 85,
+        bulletSpeed: 78,
+        mobility: 94
+    },
+    {
         name: "SPA13",
         ammo: 2, magazines: 5,
         duration: "Permanent",

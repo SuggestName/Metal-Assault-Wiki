@@ -16,7 +16,7 @@
       <div class="w-full flex items-center gap-3">
         <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
           class="inline-block hover:opacity-80 transition-opacity">
-          <img src="imagens/logo.png?v=4.6" alt="Metal Assault - Giga Slave"
+          <img src="imagens/logo.png?v=4.8" alt="Metal Assault - Giga Slave"
               class="h-10 w-auto"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         </a>
@@ -56,7 +56,7 @@
         <div class="text-center md:text-left">
           <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
              class="inline-block hover:opacity-80 transition-opacity">
-            <img src="imagens/logo.png?v=4.6" alt="Metal Assault - Giga Slave"
+            <img src="imagens/logo.png?v=4.8" alt="Metal Assault - Giga Slave"
                  class="h-16 w-auto mx-auto md:mx-0"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div class="hidden">
@@ -96,17 +96,17 @@
   </footer>
 
   <!-- DATASETS (globais) -->
-  <script src="data/rifles.js?v=4.6"></script>
-  <script src="data/snipers.js?v=4.6"></script>
-  <script src="data/bazookas.js?v=4.6"></script>
-  <script src="data/pistols.js?v=4.6"></script>
-  <script src="data/shotguns.js?v=4.6"></script>
-  <script src="data/shields.js?v=4.6"></script>
-  <script src="data/bundles.js?v=4.6"></script>
-  <script src="data/pets.js?v=4.6"></script>
-  <script src="data/wings.js?v=4.6"></script>
+  <script src="data/rifles.js?v=4.8"></script>
+  <script src="data/snipers.js?v=4.8"></script>
+  <script src="data/bazookas.js?v=4.8"></script>
+  <script src="data/pistols.js?v=4.8"></script>
+  <script src="data/shotguns.js?v=4.8"></script>
+  <script src="data/shields.js?v=4.8"></script>
+  <script src="data/bundles.js?v=4.8"></script>
+  <script src="data/pets.js?v=4.8"></script>
+  <script src="data/wings.js?v=4.8"></script>
 
   <!-- APP -->
-  <script type="module" src="js/app.js?v=4.6"></script>
+  <script type="module" src="js/app.js?v=4.8"></script>
 </body>
 </html>
