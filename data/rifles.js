@@ -1,5 +1,45 @@
 const rifles = [
     {
+        name: "SCARGL-B",
+        ammo: 35, magazines: 4,
+        duration: "Permanent",
+        price: "Cash Reward",
+        image: "imagens/rifles/scar_gl_b.png",
+        damage: 79,
+        rateOfFire: 74,
+        range: 74,
+        accuracy: 80,
+        bulletSpeed: 79,
+        mobility: 94
+    },
+    {
+        name: "M250 - Machine Gun",
+        ammo: 100, magazines: 2,
+        duration: "Permanent",
+        price: "Lottery - Limited",
+        image: "imagens/rifles/m250.png",
+        damage: 73,
+        rateOfFire: 60,
+        range: 72,
+        accuracy: 78,
+        bulletSpeed: 72,
+        mobility: 94
+    },
+    {
+        name: "AS Assault Rifle",
+        ammo: "?",
+        magazines: "?",
+        duration: "Permanent",
+        price: "Lottery - Limited",
+        image: "imagens/rifles/as_assault_rifle.png",
+        damage: '?',
+        rateOfFire: '?',
+        range: '?',
+        accuracy: '?',
+        bulletSpeed: '?',
+        mobility: '?'
+    },
+    {
         name: "M294 (Abyss)",
         ammo: 100, magazines: 4,
         duration: "Permanent",

@@ -1,5 +1,18 @@
 const pistols = [
     {
+        name: "M1911-B",
+        ammo: 9, magazines: 5,
+        duration: "Permanent",
+        price: "Lottery - Limited",
+        image: "imagens/pistols/m1911_pink.png",
+        damage: 81,
+        rateOfFire: 55,
+        range: 60,
+        accuracy: 55,
+        bulletSpeed: 75,
+        mobility: 98
+    },
+    {
         name: "P226",
         ammo: 5, magazines: 4,
         duration: "Permanent",

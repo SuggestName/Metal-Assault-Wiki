@@ -1,5 +1,44 @@
 const snipers = [
   {
+    name: "M95 (Cherry Pink)",
+    ammo: 5, magazines: 5,
+    duration: "Permanent",
+    price: "Lottery - Limited",
+    image: "imagens/snipers/m95_cherry.png",
+    damage: 91,
+    rateOfFire: 70,
+    range: 81,
+    accuracy: 75,
+    bulletSpeed: 75,
+    mobility: 90
+  },
+  {
+    name: "M24--B",
+    ammo: 10, magazines: 4,
+    duration: "Permanent",
+    price: "Outpost Coop Box",
+    image: "imagens/snipers/m24_b.png",
+    damage: 89,
+    rateOfFire: 60,
+    range: 69,
+    accuracy: 78,
+    bulletSpeed: 76,
+    mobility: 90
+  },
+  {
+    name: "M95-SS (Tradeable)",
+    ammo: 5, magazines: 4,
+    duration: "Permanent",
+    price: "Lottery - Limited",
+    image: "imagens/snipers/m95_ss.png",
+    damage: 91,
+    rateOfFire: 70,
+    range: 81,
+    accuracy: 75,
+    bulletSpeed: 75,
+    mobility: 90
+  },
+  {
     name: "Mini14",
     ammo: 7, magazines: 4,
     duration: "Permanent",
@@ -153,19 +192,6 @@ const snipers = [
     range: 82,
     accuracy: 80,
     bulletSpeed: 79,
-    mobility: 90
-  },
-  {
-    name: "M95-SS (Tradeable)",
-    ammo: 5, magazines: 4,
-    duration: "Permanent",
-    price: "Lottery - Limited",
-    image: "imagens/snipers/m95_ss.png",
-    damage: 91,
-    rateOfFire: 70,
-    range: 81,
-    accuracy: 75,
-    bulletSpeed: 75,
     mobility: 90
   }
 ];
