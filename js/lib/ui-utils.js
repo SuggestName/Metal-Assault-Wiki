@@ -9,8 +9,8 @@ export function applyUpgrade(base, inc) {
 export function createStatDisplay(label, value) {
   return `
     <div class="flex justify-between items-center text-[11px] py-0.5">
-      <span class="text-gray-400">${label}</span>
-      <span class="text-white font-bold">${value}</span>
+      <span class="text-gray-400 font-extrabold text-lg">${label}</span>
+      <span class="text-yellow-300 font-extrabold text-lg">${value}</span>
     </div>
   `;
 }
@@ -40,28 +40,33 @@ export function createWeaponCard(w, kind, score) {
   const subtitle = subtitleParts.join(' - ');
 
   return `
-    <div class="weapon-card w-full min-w-0 bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition relative">
+    <div class="weapon-card h-full flex flex-col w-full min-w-0 bg-gray-900 border border-blue-500 rounded-xl p-4 hover:shadow-xl transition relative">
+      <!-- Cabeçalho -->
       <div class="flex items-center mb-3">
-          <h2 class="flex-1 min-w-0 text-lg font-bold text-blue-400 card-title">
-            <span class="block truncate" title="${w.name}">${w.name}</span>
-          </h2>
-          <span class="ml-3 shrink-0 whitespace-nowrap rounded-full border border-blue-400 px-3 py-1 text-xs">
-            Match: ${Math.round(score)}
-          </span>
-        </div>
-      ${subtitle ? `<p class="text-yellow-400 font-bold text-sm mb-2">${subtitle}</p>` : ''}
-      <div class="bg-gray-800 rounded-lg p-2 text-center mb-3">
-        <img src="${w.image}?v=4.8" alt="${w.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=4.8">
+        <h2 class="flex-1 min-w-0 text-lg font-bold text-blue-400 card-title leading-tight">
+          <span class="block truncate" title="${w.name}">${w.name}</span>
+        </h2>
+        <span class="ml-3 shrink-0 whitespace-nowrap rounded-full border border-blue-400 px-3 py-1 text-xs">
+          Match: ${Math.round(score)}
+        </span>
       </div>
+
+      ${subtitle ? `<p class="text-yellow-400 font-bold text-sm mb-2 truncate" title="${subtitle}">${subtitle}</p>` : ''}
+
+      <div class="bg-gray-800 rounded-lg p-2 text-center mb-3 h-[140px] md:h-[160px]">
+        <img src="${w.image}?v=5.1" alt="${w.name}" class="mx-auto h-full object-contain js-zoomable cursor-zoom-in" data-zoom-src="${w.image}?v=5.1">
+      </div>
+
       ${('ammo' in w || 'magazines' in w) ? `
         <div class="text-center -mt-2 mb-2">
-          <span class="text-gray-300 text-xs">
-            Ammo: <span class="text-white font-bold">${w.ammo ?? 0}</span>
-            ${('magazines' in w) ? ` | Magazines: <span class="text-white font-bold">${w.magazines ?? 0}</span>` : ``}
+          <span class="text-gray-300 font-bold text-lg">
+            Ammo: <span class="text-white font-bold text-lg">${w.ammo ?? 0}</span>
+            ${('magazines' in w) ? ` | Magazines: <span class="text-white font-bold text-lg">${w.magazines ?? 0}</span>` : ``}
           </span>
         </div>
       ` : ``}
-      <div class="space-y-1">
+
+      <div class="space-y-1 flex-1">
         ${createStatDisplay(colorizeStatLabelByKey('damage', 'Damage'), w.damage)}
         ${displayStatsFor(kind, w)}
         ${createStatDisplay(colorizeStatLabelByKey('mobility', 'Mobility'), w.mobility)}
@@ -69,6 +74,7 @@ export function createWeaponCard(w, kind, score) {
     </div>
   `;
 }
+
 
 // Simple top navigation active-state sync
 export function syncTopNavActive() {

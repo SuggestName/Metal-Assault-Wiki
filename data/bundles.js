@@ -26,7 +26,7 @@ const bundles = [
         stats: {
             "1 Set": "Defense +6%",
             "2 Set": "HP +5%",
-            "3 Set": "Explo Res +4%",
+            "3 Set": "Explosion Resistence +4%",
             "4 Set": "Movement Speed +4%",
             "5 Set": "Defense +4%",
             "6 Set": "",
@@ -356,7 +356,7 @@ const bundles = [
         permanent: true,
         parts: 5,
         stats: {
-            "1 Set": "Explo Res +3%",
+            "1 Set": "Explosion Resistence +3%",
             "2 Set": "Defense +3%",
             "3 Set": "Movement Speed +3%",
             "4 Set": "HP +2%",

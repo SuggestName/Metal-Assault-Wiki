@@ -47,14 +47,14 @@ export function createStatDisplayWithUpgradeWeapon(kind, label, base, fin, n, st
   const colored = colorizeStatLabelByKey(stat, label);
   return `
     <div class="flex justify-between items-center text-[11px] py-0.5">
-      <span class="min-w-[100px] text-left">${colored}:</span>
+      <span class="min-w-[100px] font-extrabold text-lg text-left">${colored}:</span>
       <div class="flex items-center space-x-1">
-        <span class="text-gray-500 w-6 text-center">${base}</span>
+        <span class="text-yellow-300 font-extrabold text-lg mr-2 w-6 text-center">${base}</span>
         <button onclick="changeUpgradeWeapon('${kind}', ${n}, '${stat}', -1)" class="bg-red-600 hover:bg-red-700 w-5 h-5 rounded text-[10px]">-</button>
-        <span class="text-blue-400 font-bold w-8 text-center">+${up}</span>
+        <span class="text-blue-400 font-extrabold text-lg w-8 text-center">+${up}</span>
         <button onclick="changeUpgradeWeapon('${kind}', ${n}, '${stat}', 1)" class="bg-green-600 hover:bg-green-700 w-5 h-5 rounded text-[10px]">+</button>
         <span class="text-white font-bold">=</span>
-        <span class="text-yellow-400 font-bold w-8 text-center">${fin}</span>
+        <span class="text-yellow-400 font-extrabold text-lg w-8 text-center">${fin}</span>
       </div>
     </div>
   `;
@@ -78,8 +78,17 @@ export function createComparisonCard(kind, item, n) {
     <div class="comparison-card rounded-lg p-3">
       <h3 class="font-bold text-blue-400 mb-2 text-center text-sm">${item.name}</h3>
       <div class="bg-gray-700 rounded-lg p-2 text-center mb-2">
-        <img src="${item.image}?v=4.8" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=4.8">
+        <img src="${item.image}?v=5.1" alt="${item.name}" class="mx-auto h-25 object-contain js-zoomable cursor-zoom-in" data-zoom-src="${item.image}?v=5.1">
       </div>
+      <!-- Bloco de munição (opcional) -->
+      ${('ammo' in item || 'magazines' in item) ? `
+        <div class="text-center -mt-2 mb-2">
+          <span class="text-gray-300 font-bold text-lg">
+            Ammo: <span class="text-white font-bold text-lg">${item.ammo ?? 0}</span>
+            ${('magazines' in item) ? ` | Magazines: <span class="text-white font-bold text-lg">${item.magazines ?? 0}</span>` : ``}
+          </span>
+        </div>
+      ` : ``}
       <div class="border-t border-gray-600 my-2"></div>
       <div class="space-y-1">
         ${createStatDisplay(colorizeStatLabelByKey('damage','Damage'), stats.damage)}

@@ -2,12 +2,12 @@
 // Central place for dataset-related constants & accessors
 
 export const UPGRADE_CFG = {
-  rifles: { prefix: 'rifle', labelW: 'w-16', singular: 'rifle' },
-  snipers: { prefix: 'sniper', labelW: 'w-16', singular: 'sniper' },
-  bazookas: { prefix: 'bazooka', labelW: 'w-16', singular: 'bazooka' },
-  pistols: { prefix: 'pistol', labelW: 'w-16', singular: 'pistol' },
+  rifles: { prefix: 'rifle', labelW: 'w-20', singular: 'rifle' },
+  snipers: { prefix: 'sniper', labelW: 'w-20', singular: 'sniper' },
+  bazookas: { prefix: 'bazooka', labelW: 'w-20', singular: 'bazooka' },
+  pistols: { prefix: 'pistol', labelW: 'w-20', singular: 'pistol' },
   shotguns: { prefix: 'shotgun', labelW: 'w-20', singular: 'shotgun' },
-  shields: { prefix: 'shield', labelW: 'w-24', singular: 'shield' },
+  shields: { prefix: 'shield', labelW: 'w-20', singular: 'shield' },
 };
 
 export const UPGRADE_STATS_BY_KIND = {
@@ -66,7 +66,7 @@ export const STAT_ALIASES = [
   ['accuracy', /\baccuracy\b/i],
   ['hitRate', /\bhit\s*rate\b/i],
   ['defense', /\bdefen[cs]e\b/i],
-  ['explosionResist', /\bexplosion\s*res(ist(ance)?)?\b/i],
+  ['explosionResist', /\bexplosion[\s-]*res(?:ist(?:ance|ence)?)?\b/i],
   ['speed', /\bmovement\s*speed\b|\bspeed\b/i],
   ['mobility', /\bmobility\b/i],
   ['hp', /\bhp\b/i],
@@ -99,21 +99,4 @@ export function colorizeEffectTextUniversal(text) {
     }
   }
   return out;
-}
-
-export function statsObjectToEffectLines(stats = {}) {
-  const lines = [];
-
-  STAT_ORDER.forEach(key => {
-    if (stats[key] != null) {
-      lines.push(`${colorizeStatLabelByKey(key)} ${stats[key]}`);
-    }
-  });
-
-  Object.keys(stats).forEach(k => {
-    if (!STAT_ORDER.includes(k) && stats[k] != null) {
-      lines.push(`${colorizeStatLabelByKey(k)} ${stats[k]}`);
-    }
-  });
-  return lines;
 }

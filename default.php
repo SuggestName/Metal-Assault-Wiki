@@ -6,9 +6,9 @@
   <title>Weapon Analyzer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css?v=5.1">
 </head>
-<body class="text-gray-200 overflow-x-hidden">
+<body class="flex flex-col min-h-screen text-gray-200 bg-gray-900">
 
   <!-- TOP NAV -->
   <header class="bg-gray-800 border-b border-gray-700">
@@ -16,7 +16,7 @@
       <div class="w-full flex items-center gap-3">
         <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
           class="inline-block hover:opacity-80 transition-opacity">
-          <img src="imagens/logo.png?v=4.8" alt="Metal Assault - Giga Slave"
+          <img src="imagens/logo.png?v=5.1" alt="Metal Assault - Giga Slave"
               class="h-10 w-auto"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         </a>
@@ -44,7 +44,7 @@
   </header>
 
   <!-- CONTEÚDO -->
-  <main class="max-w-7xl mx-auto px-4 py-6 overflow-x-hidden">
+  <main class="flex-1 max-w-7xl mx-auto px-4 py-6">
     <h1 id="page-title" class="sr-only">Weapon Analyzer</h1>
     <div id="category-container"></div>
   </main>
@@ -56,7 +56,7 @@
         <div class="text-center md:text-left">
           <a href="https://store.steampowered.com/app/3628370/GigaSlave/" target="_blank"
              class="inline-block hover:opacity-80 transition-opacity">
-            <img src="imagens/logo.png?v=4.8" alt="Metal Assault - Giga Slave"
+            <img src="imagens/logo.png?v=5.1" alt="Metal Assault - Giga Slave"
                  class="h-16 w-auto mx-auto md:mx-0"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div class="hidden">
@@ -96,17 +96,17 @@
   </footer>
 
   <!-- DATASETS (globais) -->
-  <script src="data/rifles.js?v=4.8"></script>
-  <script src="data/snipers.js?v=4.8"></script>
-  <script src="data/bazookas.js?v=4.8"></script>
-  <script src="data/pistols.js?v=4.8"></script>
-  <script src="data/shotguns.js?v=4.8"></script>
-  <script src="data/shields.js?v=4.8"></script>
-  <script src="data/bundles.js?v=4.8"></script>
-  <script src="data/pets.js?v=4.8"></script>
-  <script src="data/wings.js?v=4.8"></script>
+  <script src="data/rifles.js?v=5.1"></script>
+  <script src="data/snipers.js?v=5.1"></script>
+  <script src="data/bazookas.js?v=5.1"></script>
+  <script src="data/pistols.js?v=5.1"></script>
+  <script src="data/shotguns.js?v=5.1"></script>
+  <script src="data/shields.js?v=5.1"></script>
+  <script src="data/bundles.js?v=5.1"></script>
+  <script src="data/pets.js?v=5.1"></script>
+  <script src="data/wings.js?v=5.1"></script>
 
   <!-- APP -->
-  <script type="module" src="js/app.js?v=4.8"></script>
+  <script type="module" src="js/app.js?v=5.1"></script>
 </body>
 </html>
