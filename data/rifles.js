@@ -27,17 +27,17 @@ const rifles = [
     },
     {
         name: "AS Assault Rifle",
-        ammo: "?",
-        magazines: "?",
+        ammo: "45",
+        magazines: "5",
         duration: "Permanent",
         price: "Lottery - Limited",
         image: "imagens/rifles/as_assault_rifle.png",
-        damage: '?',
-        rateOfFire: '?',
-        range: '?',
-        accuracy: '?',
-        bulletSpeed: '?',
-        mobility: '?'
+        damage: '60',
+        rateOfFire: '90',
+        range: '58',
+        accuracy: '58',
+        bulletSpeed: '85',
+        mobility: '90'
     },
     {
         name: "M294 (Abyss)",

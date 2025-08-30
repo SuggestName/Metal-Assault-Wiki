@@ -1,17 +1,17 @@
 const bazookas = [
     {
         name: "Xiaobailong Rocket",
-        ammo: "?",
-        magazines: "?",
+        ammo: "7",
+        magazines: "3",
         duration: "Permanent",
         price: "Cash Reward",
         image: "imagens/bazookas/xiaobailong.png",
-        damage: '?',
-        rateOfFire: '?',
-        range: '?',
-        accuracy: '?',
-        bulletSpeed: '?',
-        mobility: '?'
+        damage: '86',
+        rateOfFire: '48',
+        range: '80',
+        accuracy: '78',
+        bulletSpeed: '85',
+        mobility: '94'
     },
     {
         name: "a.SMAW - Pterosaur",
